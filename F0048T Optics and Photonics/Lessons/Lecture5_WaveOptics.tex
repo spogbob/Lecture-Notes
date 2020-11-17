@@ -1,0 +1,86 @@
+\documentclass{article}
+
+\begin{document}
+  \section{Vågoptik}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \subsection{Vågoptik, grunder}
+  \begin{itemize}
+    \item Reella vågfunktionen: $u(\bar{r},t)$
+    \item Består av ljus som propagerar inom rymdvinkel $\Omega$
+    \item Frekvenser inom spektrat $[\nu_{min},\nu_{max}]$
+    \item $\nu\approx 10^{14}Hz$
+    \item Vågekvationen: $\nabla^2u(\bar{r},t)-\frac{1}{c^2}\frac{\partial^2u(\bar{r},t)}{\partial t^2}=0$
+    \item Fashastigheten: $c=c_0/n$
+    \item Ljusetshastigeht: $c_0$
+    \item Brytningsindex: $n$
+  \end{itemize}
+
+  \begin{equation}
+    u(\bar{r},t)=Re{U(\bar{r},t)}=\frac{1}{2}[U(\bar{r},t)+U*(\bar{r},t)]
+  \end{equation}
+  $U(\bar{r},t)$ Komplex vågfunktion\\
+
+  Generell lösning:
+  \begin{equation}
+    U(\bar{r},t)=\int_{\nu}\int_{\Omega}U(\bar{f},\nu)exp(i2\pi(\nu t-\bar{f}\cdot\bar{r}))d\bar{f}d{\nu}
+  \end{equation}
+  $U(\bar{f},\nu)$: Spektrala vågfunktionen\\
+
+  \textbf{Mätbara storheter:}
+  \begin{itemize}
+    \item Area: $A_d$
+    \item Integrationstid $T$
+    \item Intensitet: $ I(\bar{r},t) = 2<u^2(\bar{r},t)>\qquad[W/m^2]$
+    \item Effekt: $P(t) = \int_{A_d}I()\bar{r},t)dA\qquad[W]$
+    \item Energi: $E = \int_TP(t)dt\qquad[J]$ \quad\textbf{Vilket är det som mäts!}
+  \end{itemize}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \subsubsection{Monokromatiska vågor}
+  Med hjälp av vågekvationen och vågfunktionen får man:
+  \begin{equation}
+    U(\bar{r},t)=U(\bar{r}e^{i2\pi\nu t})
+  \end{equation}
+  Rumsderiverad:
+  \begin{equation}
+    \nabla^2U(\bar{r},t)=\nabla^2\big(U(\bar{r})\big)e^{i2\pi\nu t}
+  \end{equation}
+  Tidsderiverad:
+  \begin{equation}
+    \frac{\partial^2U(\bar{r},t)}{\partial t^2} = -4\pi^2\nu^2U(\bar{r})e^{i2\pi\nu t}
+  \end{equation}
+
+  Vilket ger den \textbf{viktigaste} ekvationen inom optiken, Helmholz ekvation:
+  \begin{equation}
+    \mathbf{\bigg[\nabla^2U(\bar{r})+k^2U(\bar{r})\bigg]e^{i2\pi\nu t} = 0}
+  \end{equation}
+  Där:
+  \begin{itemize}
+    \item Frekvens: $\nu$
+    \item Vågtal: $k=\frac{2\pi\nu}{c}=\frac{2\pi}{\lambda}$
+    \item Dispersionsrelation: $c=\nu\lambda$
+    \item Våglängd: $\lambda$
+  \end{itemize}
+
+  Då $e^{i2\pi\nu t}$ är fourierkerneln så kan man titta på den komplexa vågfunktionen i frekvensrummet, vid monokromatiskt ljus får vi bara en peak på var sida om noll. En för funktionen och en för komplexkonjugatet.\\
+
+  Vid invers fouriertransform av $U(\bar{r},t)$ så får vi $u(\bar{r},t)=A(\bar{r})\cos{\phi(\bar{r})+s\pi\nu_0t}$\\
+
+  \begin{itemize}
+    \item Komplex Amplitud: $U(\bar{r})=A(\bar{r})e^{i\phi(\bar{r})}$
+    \item Amplitud: $A(\bar{r})$
+    \item Fas: $\phi(\bar{r})$
+    \item Intensitet: $I(\bar{r})=|U(\bar{r})|^2=A^2(\bar{r})\qquad [W/m^2]$
+    \item Effekt: $P = IA_d\qquad[W]$
+    \item Emergitäthet: $W=\frac{I}{c}=\frac{E}{cA_dT}\qquad[J/m^3]$
+    \begin{itemize}
+      \item $A_d$ Detektorarea
+      \item $T$ Exponeringstid
+    \end{itemize}
+  \end{itemize}
+
+
+\end{document}
