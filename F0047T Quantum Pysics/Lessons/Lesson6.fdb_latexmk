@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1605608884 "Lesson6.tex" "Lesson6.pdf" "Lesson6" 1605608885
-  "Lesson6.aux" 1605608885 126 de2d25d935be991620755432dead32a8 "pdflatex"
-  "Lesson6.tex" 1605608884 109 bfe4f15e89a3977cac3c7161ee31afe6 ""
+["pdflatex"] 1605614164 "Lesson6.tex" "Lesson6.pdf" "Lesson6" 1605614165
+  "Lesson6.aux" 1605614165 126 de2d25d935be991620755432dead32a8 "pdflatex"
+  "Lesson6.tex" 1605614164 87 f47a59754449d99fb95ef7cf33989d26 ""
   "a:/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1605605407 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "a:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1605604835 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "a:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1605604835 1288 655e228510b4c2a1abe905c368440826 ""
@@ -15,6 +15,6 @@
   "a:/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1605607650 2549578 fa1179f2edd89976a0547efeda0d39c8 ""
   "a:/texlive/2020/texmf.cnf" 1605607575 713 e69b156964470283e0530f5060668171 ""
   (generated)
-  "Lesson6.log"
-  "Lesson6.aux"
   "Lesson6.pdf"
+  "Lesson6.aux"
+  "Lesson6.log"
