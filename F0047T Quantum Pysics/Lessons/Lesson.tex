@@ -1,0 +1,144 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+  \textbf{Från och med lektion 6!!!}
+  \section{Potential som elastisk potentiell energi}
+  I klassisk mekanik är elastisk potentiell energi $\frac{1}{2}kx^2$ men inte riktigt i QM.\\
+
+  Går att lösa på två sätt:
+  \begin{enumerate}
+    \item Algebraisk metod
+    \item Analytisk metod
+  \end{enumerate}
+
+  \subsection{Algebraisk metod}
+  Tar ut algebraiskt med hjälp av TOSE stegoperatorerna $\hat{a}_+$ och $\hat{a}_-$. Stegoperatorerna är ej kommutativa så vi kan inte bara byta plats på dem.
+
+  Vi kan ta fram en kommutator för lägesoperatorn och rörelsemängdsoperatorn $[\hat{x},\hat{p}]$:\\
+  Vi använder oss av en testfunktion $f(x)$ för att kunna evaluera Stegoperatorerna.
+
+  \begin{equation}
+    \begin{split}
+      [\hat{x},\hat{p}]f(x)=(\hat{x}\hat{p}-\hat{p}\hat{x})f(x)=-i\hbar\bigg(x\frac{d}{dx}f(x)-\frac{d}{dx}(xf(x))\bigg)=\\
+      -i\hbar\bigg[x\frac{d}{dx}f(x)-\frac{dx}{dx}f(x)-x\frac{d}{dx}f(x)\bigg]=i\hbar f(x)
+    \end{split}
+  \end{equation}
+
+  $[\hat{x},\hat{p}]=i\hbar$ kallas "canonical commutation relation"/"Osäkerhets sammbandet"\\
+
+  Detta resultat appliceras på stegoperatorerna:
+  \begin{equation}
+    \hat{a}_-\hat{a_+}=\frac{1}{2\hbar m \omega}[\hat{p}^2+(m\omega\hat{x})^2]-\frac{i}{2\hbar}[\bar{x},\bar{p}]
+  \end{equation}
+\begin{equation}
+  \hat{a}_-\hat{a_+}=\frac{1}{\hbar\omega}\hat{H}-\frac{i}{2\hbar}(i\hbar)=\frac{1}{\hbar\omega}\bar{H}+\frac{1}{2}
+\end{equation}
+
+\begin{equation}
+  \hat{H}=\hbar(\hat{a}_-\hat{a}_+-\frac{1}{2})
+\end{equation}
+Jämföra med att byta plats på stegoperatorerna:
+\begin{equation}
+  \hat{a}_+\hat{a}_-=\frac{1}{\hbar\omega}\bar{H}-\frac{1}{2}
+\end{equation}
+
+\begin{equation}
+  \hat{H}=\hbar(\hat{a}_+\hat{a}_-+\frac{1}{2})
+\end{equation}
+
+Vilker leder till att vi kan skriva hamiltonoperatorn $\hat{H}=\hbar\omega(\hat{a}_{\mp}\hat{a}_{\pm}\mp\frac{1}{2})$\\
+
+Sätter in uttrycket i SE:
+\begin{equation}
+  \hbar\omega(\hat{a}_{\mp}\hat{a}_{\pm}\mp\frac{1}{2})\Psi=E\Psi
+\end{equation}
+
+Om vågfunktionen $\Psi$ är en egenfunktion med egenvärde $E$, vad är $\hat{a}_{\pm}\Psi$?
+
+Från SE för harmonisk oscillator:\quad $\hat{H}\hat{a}_+\hat{a}_-+\frac{1}{2}=\hbar\omega(\hat{a}_+\hat{a}_-+\frac{1}{2})\hat{a}_+\Psi$
+
+\begin{equation}
+  \hat{H}(\hat{a}_+,\Psi)=\hbar\omega(\hat{a}_+\hat{a}_-\hat{a}_++\frac{1}{2}\hat{a}_+)\Psi=\hbar\omega\hat{a}_+(\hat{a}_-\hat{a}_++\frac{1}{2})\Psi
+\end{equation}
+
+För att kommutatorn $[\hat{a}_-,\hat{a}_+]$ ska vara kommutativt så måste den vara lika med $1$ detta leder till:
+
+\begin{equation}
+  \hat{H}(\hat{a}_+\Psi)=\hbar\omega\hat{a}_+(1+\hat{a}_+\hat{a}_-+\frac{1}{2})\Phi=\hat{a}_+(\hat{H}+\hbar\omega)\Psi=\hat{a}_+(E+\hbar\omega)\Psi
+\end{equation}
+
+Mellantermen är en konstant och kommutativ med de andra termerna:
+\begin{equation}
+  \hat{H}(\hat{a}_+\Psi)=(E+\hbar\omega)\hat{a}_+\Psi
+\end{equation}
+
+Detta betyder att om $\hat{H}\Psi=E\Psi$ så är $\hat{a}_+\Psi$ en egenfunktion med egenvärde $E+\hbar\omega$.\\
+På samma sätt så ger det att $\hat{a}_-$ är en egenfunktion med egenvärde $E-\hbar\omega$.
+\begin{equation}
+  \hat{H}(\hat{a}_-\Psi)=(E-\hbar\omega)\hat{a}_-\Psi
+\end{equation}
+
+Detta gör så att om man multiplicerar vågfunktionen med steg-upp-operatorn $\hat{a}_+$ så ökar energin med $\hbar\omega$ för varje gång man gör det. Och på samma sätt för steg-ner-operatorn men denna kan inte gå oändligt långt ner utan det finns ett stopp nedåt på $E_0$.
+
+\textbf{OBS:} $\hat{a}_{\pm}\Psi$ behöver inte vara normerade även om $\Psi$ är det.
+
+Vi tar lägsta energinivån $E_0$, om vi applicerar $\hat{a}_-$: $\hat{a}_-\Psi_0=0$\\
+
+I SE:
+\begin{equation}
+  \frac{d}{dx}\Psi_0+\frac{m\omega}{\hbar}x\Psi_0=0
+\end{equation}
+
+Om man integrerar detta får man:
+\begin{equation}
+  \ln{\Psi_0}=-\frac{m\omega}{\hbar}\frac{x^2}{2}+c
+\end{equation}
+vilket kan skrivas om till:
+\begin{equation}
+  \Phi_0=Ae^{-\frac{m\omega}{2\hbar}x^2}
+\end{equation}
+
+För allmänn lösning så behöver vi först normera $\Psi_0$
+\begin{equation}
+  1=\int_{-\infty}^{+\infty}|A|^2e^{-(m\omega x^2)/\hbar}dx=A^2\sqrt{\frac{\pi\hbar}{m\omega}}=1
+\end{equation}
+\begin{equation}
+  A =\sqrt[4]{\frac{m\omega}{\pi\hbar}}
+\end{equation}
+Vilket ger:
+\begin{equation}
+  \Phi_0=\sqrt[4]{\frac{m\omega}{\pi\hbar}}e^{-\frac{m\omega}{2\hbar}x^2}
+\end{equation}
+Detta är stationära tillståndet för harmoniska oscillatorn för lägsta energi.\\
+
+Hur ser $E_0$ ut?\\
+Från SE: Beräkna energi för $\Psi_0$:
+\begin{equation}
+  \hat{H}=\hbar\omega(\hat{a}_+\hat{a}_-+\frac{1}{2})=\frac{1}{2}\hbar\omega\Psi_0=E_0\Psi_0
+\end{equation}
+\begin{equation}
+  E_0=\frac{1}{2}\hbar\omega
+\end{equation}
+
+$\Psi_0$, $E_0$ är grundtillståndet vilket gör att de resterande är exiterade tillstånd och kan beskrivas med hjälp av att kliva uppåt med $\hat{a}_+$:\\
+
+Energi för exiterade tillstånd:
+\begin{equation}
+  E_n=(n+\frac{1}{2})\hbar \omega
+\end{equation}
+
+vågfunktionen för exiterade tillstånd:
+\begin{equation}
+  \Phi_n(x)=A_n(\hat{a}_+)^n\Phi_0(x)
+\end{equation}
+Där $n$ är större eller lika med $0$.
+
+Den generella bågfunktionen skulle då bli:
+\begin{equation}
+  \Psi(x,t)=\sum_{n=0}^{\infty}c_n\Psi_n(x,t)
+\end{equation}
+
+\textbf{Titta själv på sida 45-46 och räkna på det!}
+
+\end{document}
