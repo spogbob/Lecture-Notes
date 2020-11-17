@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[swedish]{babel}
+
+\begin{document}
+  \section*{Uppgift 1}
+    \textbf{Givet:} Proton med kinetisk energi på $E_k=6.50keV$ samt att vi vet att massan för en proton är $m_p=938.272MeV/c^2$
+
+    \subsection*{A - Vad är protonens linjära momentum?}
+      Det linjära momentumet för en proton ges utav ekvationen:
+      \begin{equation}
+        p=m_pv
+        \label{eq:momentum}
+      \end{equation}
+      Den kinetiska energin kan beräknas med hjälp utav ekvation:
+      \begin{equation}
+        E_k=\frac{1}{2}m_pv^2
+        \label{eq:kinetic}
+      \end{equation}
+      Med hjälp av ekvation (\ref{eq:momentum}) och (\ref{eq:kinetic}) så kan en ekvation för $p$ göras som endast innehåller kända värden:
+      \begin{equation}
+        p=\sqrt{2E_km_p}
+      \end{equation}
+      Nummeriskt så blir det:
+      \begin{equation}
+        p=\sqrt{2\times6.50\times10^3\times938.272\times10^6}eV/c\approx\mathbf{2.47MeV/c}
+      \end{equation}
+
+    \subsection*{B - Vad är protonens de Broglie våglängd?}
+      De Broglie våglängden ges utav ekvationen:
+      \begin{equation}
+        \lambda=\frac{h}{p}
+      \end{equation}
+      Där $h$ är Plancks konstant med ett värde på $4.1356673feVs$ och $p$ är momentumet från föregående del.
+      \begin{equation}
+        \lambda=\frac{4.1356673\times10^{-15}eVs}{2.469568\times10^{6}eV/c}=1.67465187\times10^{-21}cs
+      \end{equation}
+      För att skriva om våglängden till SI-enheter så multipliceras svaret med ljusets hastihet, $c=299792458m/s$:
+      \begin{equation}
+        \lambda=1.67465187\times10^{-21}s\times299792458m/s\approx\mathbf{0.502pm}
+      \end{equation}
+
+  \newpage
+  \section*{Uppgift 2}
+      \textbf{Givet:} Protonen rör sig i en endimensionell låda med längden $a=1.50nm$ med potentialen:
+      \[
+        V(x)=
+        \begin{cases}
+          0,      & \text{för}\quad0\leq x\leq a\\
+          \infty, & \text{annars}
+        \end{cases}
+      \]
+      Givet är även att då tiden $t=0$ så är vågfunktionen $\psi(x)$ är partikeln kända att vara:
+      \[
+        \psi(x)=
+        \begin{cases}
+          Ax^2(a-x),& \text{för}\quad0\leq x\leq a\\
+          0,        & \text{annars}
+        \end{cases}
+      \]
+      Där $A$ är en konstant
+      \subsection*{A - Bestäm konstanten A så att vågfunktionen är normaliserad}
+        Normalisering av vågekvationen i en endimensionell låda bestämms med ekvation:
+        \[
+          1=\int_{0}^{a}|\psi(x)|^2dx
+        \]
+        Med insättning av $\psi(x)$ blir ekvationen:
+        \[
+          1=\int_{0}^{a}|Ax^2(a-x)|^2dx=|A|^2\int_0^ax^4(a-x)^2dx=|A|^2\int_0^a(a^2x^4-2ax^5+x^6)dx=
+        \]
+        \[
+          =|A|^2\bigg[\frac{a^2x^5}{5}-\frac{ax^6}{3}+\frac{x^7}{7}\bigg]_0^a=|A|^2\bigg(\frac{a^7}{5}-\frac{a^7}{3}+\frac{a^7}{7}\bigg)=|A|^2\frac{a^7}{105}
+        \]
+        $A$ bryts ut ur ekvationen samt värdet på $a$ läggs in:
+        \[
+          A=\sqrt{\frac{105}{a^7}}=\sqrt{\frac{105}{(1.50\times10^{-9})^7}}=\mathbf{264575.1311}
+        \]
+      \subsection*{B - Bestäm sannolikheten att det är grundtillståndets energi om man mäter energin}
+        Sannolikheten att det är en specifik energinivå ges utav $|c_n|^2$ där $c_n$ ges utav:
+        \[
+          c_n=\int_0^a\psi_n^*f(x)dx
+        \]
+        Där $\psi_n^*$ ges utav:
+        \[
+          \psi_n^*=\psi_n=\sqrt{\frac{2}{a}}\sin{\frac{n\pi x}{a}}
+        \]
+        och $f(x)$ ges utav:
+        \[
+          f(x)=Ax^2(a-x)^2
+        \]
+        $c_n$ blir då:
+        \[
+          c_n=\sqrt{\frac{2}{a}}A\int_0^a\sin{\frac{n\pi x}{a}}x^2(a-x)^2
+        \]
+        Sätter in algebraiska versionen av $A$ innan samt förenklar $c_n$:
+        \[
+          c_n=\sqrt{\frac{2}{a}}\sqrt{\frac{105}{a^7}}\int_0^a\sin{\frac{n\pi x}{a}}x^2(a-x)dx=\sqrt{210}a^{-4}\int_0^a\sin{\frac{n\pi x}{a}}x^2(a-x)dx=
+        \]
+        \[
+          =\sqrt{210}a^{-4}\int_0^a\sin{\frac{n\pi x}{a}}(ax^2-x^3)dx=
+        \]
+        \[
+          =\sqrt{210}a^{-4}\bigg(a\int_0^a\sin{\frac{n\pi x}{a}}x^2dx-\int_0^a\sin{\frac{n\pi x}{a}}x^3dx\bigg)
+        \]
+        Beräknar integralerna var för sig för att underlätta:
+        \[
+          \int_0^a\sin{\frac{n\pi x}{a}}x^2dx=\bigg[-\frac{a\cos{\frac{n\pi x}{a}}}{n\pi}x^2\bigg]_0^a-\int_0^a-\frac{a\cos{\frac{n\pi x}{a}}}{n\pi}2xdx=
+        \]
+        \[
+          =-\frac{a^3(-1)^n}{n\pi}+\bigg[\frac{2a^2\sin{\frac{n\pi x}{a}}}{n^2\pi^2}x\bigg]_0^a-\int_0^a\frac{2a^2\sin{\frac{n\pi x}{a}}}{n^2\pi^2}dx=
+        \]
+        \[
+          =-\frac{a^3(-1)^n}{n\pi}-\bigg[-\frac{2a^3\cos{\frac{n\pi x}{a}}}{n^3\pi^3}\bigg]_0^a=\frac{a^3((-1)^n(2-n^2\pi^2)-2)}{n^3\pi^3}
+        \]
+        Och andra integralen:
+        \[
+          \int_0^a\sin{\frac{n\pi x}{a}}x^3dx=
+        \]
+
+
+
+
+\end{document}
