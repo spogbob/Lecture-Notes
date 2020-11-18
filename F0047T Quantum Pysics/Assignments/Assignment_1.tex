@@ -114,9 +114,28 @@
         \]
         Och andra integralen:
         \[
-          \int_0^a\sin{\frac{n\pi x}{a}}x^3dx=
+          \int_0^a\sin{\frac{n\pi x}{a}}x^3dx=\bigg[-\frac{a\cos{\frac{n\pi x}{a}}}{n\pi}x^3\bigg]_0^a-\int_0^a-\frac{a\cos{\frac{n\pi x}{a}}}{n\pi}3x^2dx=
         \]
-
+        \[
+          =-\frac{a^4(-1)^n}{n\pi}+\bigg[\frac{3a^2\sin{\frac{n\pi x}{a}}}{n^2\pi^2}x^2\bigg]_0^a-\int_0^a\frac{6a^2\sin{\frac{n\pi x}{a}}}{n^2\pi^2}xdx=
+        \]
+        \[
+          =-\frac{a^4(-1)^n}{n\pi}-\bigg[-\frac{6a^3\cos{\frac{n\pi x}{a}}}{n^3\pi^3}x\bigg]_0^a+\int_0^a-\frac{6a^3\cos{\frac{n\pi x}{a}}}{n^3\pi^3}dx=
+        \]
+        \[
+          =-\frac{a^4(-1)^n}{n\pi}+\frac{6a^4(-1)^n}{n^3\pi^3}-\bigg[\frac{6a^4\sin{\frac{n\pi x}{a}}}{n^4\pi^4}\bigg]_0^a=\frac{a^4(-1)^n(6-n^2\pi^2)}{n^3\pi^3}
+        \]
+        Sätt in de båda integralerna igen:
+        \[
+          c_n=\sqrt{210}a^{-4}\bigg(a\frac{a^3((-1)^n(2-n^2\pi^2)-2)}{n^3\pi^3}-\frac{a^4(-1)^n(6-n^2\pi^2)}{n^3\pi^3}\bigg)=
+        \]
+        \[
+          =\frac{\sqrt{210}}{n^3\pi^3}\bigg(\big((-1)^n(2-n^2\pi^2)-2\big)-(-1)^n(6-n^2\pi^2)\bigg)=\frac{2\sqrt{210}}{n^3\pi^3}\bigg(2(-1)^{n+1}-1\bigg)
+        \]
+        För att bräkna sannolikheten för att det ska vara grundtillståndets energi om man mäter energin så sättes $n=1$ in i $|c_n|^2$:
+        \[
+          |c_n|^2=\bigg(\frac{2\sqrt{210}}{\pi^3}\big(2(-1)^{2}-1\big)\bigg)^2=0.873736...\approx87.4\%
+        \]
 
 
 
