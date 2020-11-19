@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{amsmath}
 
 \begin{document}
   \section{Vågoptik}
@@ -110,7 +111,65 @@
       A(\bar{r})=\frac{A_0}{z}e^{-ik\frac{\rho^2}{2z}}
     \]
     Om man betraktar en liten del av en sfärisk våg som har en rymdvinkel $\Omega<<1$ på ett avstånd långt ifrån centrum så kommer det att i princip att vara en plan våg.
+  \newpage
+  \subsection{Avbildining med vågoptik}
+    Avbildning kan till exempel vara att omvandla en utgående sfärisk våg till en anna ingående sfärisk våg. Eller att man omvandlar en sfärisk våg till en plan våg eller tvärtom. Dessa är med olika former av positiva linser.\\
 
+    Om man använder sig utav en negativ lins så omvandlar man en sfärisk våg till en annan sfärisk våg med större krökning.\\
 
+    Fasen av en sfärisk våg:
+    \[
+      e^{-ikr}
+    \]
+    där $r$ är avståndet till krökningscentrumet. Propagerar över linsytan:
+    \[
+     \phi=kr=ka\sqrt{1+\big(\frac{y}{a}\big)^2}\approx k\big(a+\frac{y^2}{2a}\big)
+    \]
+    Variationen efter linsytan ges utav
+    \[
+      \phi_y=k\frac{y^2}{2a}
+    \]
+    Om längden från vågcentrat till linsen är lika långt som linsens brännvidd så blir förändringen noll efter linsen
+    \[
+      a=f\Longrightarrow\phi_y=0\;\text{efter\;linsen}\Longrightarrow U_{lins}=e^{ik\frac{y^2}{2f}}
+    \]
+    Generellt:\\
+    För att beskriva den komplexa amplituden efter linsen så multiplicerar man komplexa amplituden före linsen med linsens komplexa amplitud
+    \[
+      U^+=U^-U_{lins}\Longrightarrow U^+=A_0e^{-ik(a+\frac{y^2}{2a})}e^{ik\frac{y^2}{2f}}
+    \]
+
+    Där $U^-$ är optiska fältet före linsen och $U^+$ optiska fältet efter.\\
+
+    Om man istället tittar på faserna så får vi
+    \[
+      \phi_y^+=\phi_y^--\phi_{lins}
+    \]
+    vilket man skulle kunna skriva om till
+    \[
+      \frac{1}{a}-\frac{1}{f}=\frac{1}{b}
+    \]
+    Vilket är linsformeln och $b$ blir den resulterande vågens centrum.\\
+
+    Avbildning:
+    \[
+      U^+=A_0e^{-ik(a+\frac{y^2}{2a})}e^{ik\frac{y^2}{2f}}=A_0e^{-ik(a+\frac{y^2}{2b})}
+    \]
+    Där vi sätter $a=\alpha f$ där $\alpha>1$. Vilket skulle ge $b=-\frac{\alpha f}{\alpha -1}$. Detta betyder att den är en divergerande våg innan linsen som sedan blir en konvergerande våg efter linsen då $b$ är negativt, vilket betyder att krökningsradien hamnar framför vågen istället.\\
+
+    Beräknar för en lupp istället:
+    \[
+      U^+=A_0e^{ik(a+\frac{y^2}{2a})}e^{ik\frac{y^2}{2f}}=A_0e^{-ik(a+\frac{y^2}{2b})}
+    \]
+    Där vi sätter $a=f$ istället, det gör att $\frac{1}{b}=0$ och utgående vågen blir en plan våg
+    \[
+      U^+=A_0e^{-ika}
+    \]
+
+    Avbildning från oändligheten kommer ge ett liknande resultat som föregående fast åt motsatt håll detta då $a\rightarrow\infty$ så ger linsformeln, $\frac{1}{b}=\frac{1}{a}-\frac{1}{f}$, att $b=-f$. Vilket gör att det blir ett helt omvänt system jämfört med föregående exempel och ekvationen blir
+    \[
+      U^+=A_0e^{-ik(a-\frac{y^2}{2f})}
+    \]
+    Om man istället tar ett exempel med en negativ lins så kommer $f=-|f|$ vilket leder till $b=\frac{a|f|}{|f|+a}$. Detta gör så att det kommer att vara divergerande vågor både före och efter linsen.
 
 \end{document}

@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+\title{F0048T: Datorövning: Plana vågor}
+\author{Simon Johnsson \textit{johsim-7@student.ltu.se}}
+\date{\today}
+\maketitle
+
+\section*{Uppgift 1}
+  \[
+    U(\bar{r})=e^{i(k\bar{s}\cdot\bar{r}+\alpha)}
+  \]
+  \subsection*{A - Beskriv vad som menas med vågtalet $k$, riktningsvektorn $\bar{s}$, positionsvektorn $|r|$ och faskonstanten $\alpha$.}
+    \begin{itemize}
+      \item Vågtalet $k$ används för att ge ekvationerna en enklare form, vågtalet representerar $k=\frac{2\pi}{\lambda}$
+      \item Riktningsvektorn $\bar{s}$ är en vektor som beskriver i vilken riktning som vågen propagerar
+      \item positionsvektorn $|\bar{r}|$ betecknar vilket avstånd $U$ mäts på från ljuskällan
+      \item Faskonstanten $\alpha$ betecknar vilken fasförskjutning ljuset har ut från ljuskällan (här då $\bar{r}=0$)
+    \end{itemize}
+  \subsection*{B - Beskriv hur intensiteten beräknas från den komplexa amplituden och vad som menas med den komplexa amplitudens fas}
+    Intensiteten för den komplexa amplituden beräknas med hjälp av
+    \[
+      I(\bar{r})=|U(\bar{r})|^2=U(\bar{r})U^*(\bar{r})
+    \]
+    Komplexa amplitudens fas innebär vågens relativa höjd jämfört med planet den propagerar i. Till exempel om vågen propagerar i $yz$-planet så är fasen värdet på $x$ i punkten fasen beräknas i.
+  \subsection*{C - Skriv ner ekvationen för den komplexa amplituden och dess intensitet av en godtycklig plan monokromatisk våg med våglängden $\lambda=\lambda_0/n$ som propagerar i riktning $\bar{s}$ i ett fast kartesiskt koordinatsystem. Exemplifiera med ett fall då $\lambda=\lambda_0=1\mu m$ och $\bar{s}$ ligger i $yz$-planet med vinkeln $10^{\circ}$ mot $z$-axeln}
+    De givna storheterna ger
+    \begin{itemize}
+      \item $k=\frac{2\pi}{\lambda}=\frac{2\pi n}{\lambda_0}$
+      \item $\bar{s}=\begin{bmatrix}
+        s_x\\
+        s_y\\
+        s_z
+      \end{bmatrix}$
+    \end{itemize}
+    Detta ger komplexa amplituden
+    \[
+      U(\bar{r})=e^{i\big(\frac{2\pi n}{\lambda_0}\begin{bmatrix}
+        s_x & s_y & s_z
+      \end{bmatrix}^T\cdot\bar{r}+\alpha\big)}
+    \]
+    och intensiteten
+    \[
+      I(\bar{r})=e^{i\big(\frac{2\pi n}{\lambda_0}\begin{bmatrix}
+        s_x & s_y & s_z
+      \end{bmatrix}^T\cdot\bar{r}+\alpha\big)}e^{-i\big(\frac{2\pi n}{\lambda_0}\begin{bmatrix}
+        s_x & s_y & s_z
+      \end{bmatrix}^T\cdot\bar{r}+\alpha\big)}=1
+    \]
+    Med insättning av värdena som skulle exemplifieras med får vi:\\
+    Komplexa amplituden
+    \[
+      U(\bar{r})=e^{i\big(2\pi 10^{12}\begin{bmatrix}
+        0 & \sin{10^{\circ}} & \cos{10^{\circ}}
+      \end{bmatrix}^T\cdot\bar{r}+\alpha\big)}
+    \]
+    och intensiteten kommer att fortsätta att vara $1$ då det endast är komplexa exponenter och vi inte ändrat någon amplitud.
+
+\newpage
+\section*{Uppgift 2}
+  \subsection*{Beskriv vad som menas med fasmatchning. Skriv ner sambanden mellan de olika rikningscosinerna ($\{s_x,s_y,s_z\}$) vid gränsytan mellan de två mediumen.}
+    Fasmatchning går ifrån när ljus kommer från ett medium med brytningsindex $n_1$ till ett annat medium med brytningsindex $n_2$ så måste det inkommande ljuset och de utgående ljuset ha samma fas i brytningsytan. Detta leder till att riktningsvektorn $\bar{s}$ för ljuset förändras för det utgående ljuset för att bibehålla samma fas, alltså ljuset bryts till en annan vinkel.\\
+    Anledningen till att fasen måste vara samma i ytan mellan de två mediumen är för att vågorna ska fortsätta kontinuerligt.\\
+
+    Fasmatchning är beskrivet med hjälp av likheterna $\bar{f_1}\cdot\bar{r} = \bar{f_2}\cdot\bar{r} = \bar{f_3}\cdot\bar{r}$. Om vi sätter vektorerna i $yz$-planet så får vi vektorerna:
+    \[
+      \bar{f_1}=\frac{n_1}{\lambda_0}(0,\sin{\theta_1}, \cos{\theta_1})
+    \]
+    \[
+      \bar{f_2}=\frac{n_1}{\lambda_0}(0,\sin{\theta_2}, \cos{\theta_2})
+    \]
+    \[
+      \bar{f_3}=\frac{n_1}{\lambda_0}(0,\sin{\theta_3}, -\cos{\theta_3})
+    \]
+    Där $\theta_1$ \& $\theta_2$ är infalls- respektive utfallsvinkeln samt $\theta_3$ är reflektionsvinkeln
+
+
+\end{document}
