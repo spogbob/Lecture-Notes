@@ -1,7 +1,17 @@
 \documentclass{article}
 \usepackage{amsmath}
-
 \begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                               Title                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \title{Kvantfysik F0047T}
+  \author{Simon Johnsson}
+  \date{Luleå -- HT20}
+  \maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                             Lesson 6                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \textbf{Från och med lektion 6!!!}
   \section{Potential som elastisk potentiell energi}
   I klassisk mekanik är elastisk potentiell energi $\frac{1}{2}kx^2$ men inte riktigt i QM.\\
@@ -18,66 +28,66 @@
   Vi kan ta fram en kommutator för lägesoperatorn och rörelsemängdsoperatorn $[\hat{x},\hat{p}]$:\\
   Vi använder oss av en testfunktion $f(x)$ för att kunna evaluera Stegoperatorerna.
 
-  \begin{equation}
+  \[
     \begin{split}
       [\hat{x},\hat{p}]f(x)=(\hat{x}\hat{p}-\hat{p}\hat{x})f(x)=-i\hbar\bigg(x\frac{d}{dx}f(x)-\frac{d}{dx}(xf(x))\bigg)=\\
       -i\hbar\bigg[x\frac{d}{dx}f(x)-\frac{dx}{dx}f(x)-x\frac{d}{dx}f(x)\bigg]=i\hbar f(x)
     \end{split}
-  \end{equation}
+  \]
 
   $[\hat{x},\hat{p}]=i\hbar$ kallas "canonical commutation relation"/"Osäkerhets sammbandet"\\
 
   Detta resultat appliceras på stegoperatorerna:
-  \begin{equation}
+  \[
     \hat{a}_-\hat{a_+}=\frac{1}{2\hbar m \omega}[\hat{p}^2+(m\omega\hat{x})^2]-\frac{i}{2\hbar}[\bar{x},\bar{p}]
-  \end{equation}
-\begin{equation}
+  \]
+\[
   \hat{a}_-\hat{a_+}=\frac{1}{\hbar\omega}\hat{H}-\frac{i}{2\hbar}(i\hbar)=\frac{1}{\hbar\omega}\bar{H}+\frac{1}{2}
-\end{equation}
+\]
 
-\begin{equation}
+\[
   \hat{H}=\hbar(\hat{a}_-\hat{a}_+-\frac{1}{2})
-\end{equation}
+\]
 Jämföra med att byta plats på stegoperatorerna:
-\begin{equation}
+\[
   \hat{a}_+\hat{a}_-=\frac{1}{\hbar\omega}\bar{H}-\frac{1}{2}
-\end{equation}
+\]
 
-\begin{equation}
+\[
   \hat{H}=\hbar(\hat{a}_+\hat{a}_-+\frac{1}{2})
-\end{equation}
+\]
 
 Vilker leder till att vi kan skriva hamiltonoperatorn $\hat{H}=\hbar\omega(\hat{a}_{\mp}\hat{a}_{\pm}\mp\frac{1}{2})$\\
 
 Sätter in uttrycket i SE:
-\begin{equation}
+\[
   \hbar\omega(\hat{a}_{\mp}\hat{a}_{\pm}\mp\frac{1}{2})\Psi=E\Psi
-\end{equation}
+\]
 
 Om vågfunktionen $\Psi$ är en egenfunktion med egenvärde $E$, vad är $\hat{a}_{\pm}\Psi$?
 
 Från SE för harmonisk oscillator:\quad $\hat{H}\hat{a}_+\hat{a}_-+\frac{1}{2}=\hbar\omega(\hat{a}_+\hat{a}_-+\frac{1}{2})\hat{a}_+\Psi$
 
-\begin{equation}
+\[
   \hat{H}(\hat{a}_+,\Psi)=\hbar\omega(\hat{a}_+\hat{a}_-\hat{a}_++\frac{1}{2}\hat{a}_+)\Psi=\hbar\omega\hat{a}_+(\hat{a}_-\hat{a}_++\frac{1}{2})\Psi
-\end{equation}
+\]
 
 För att kommutatorn $[\hat{a}_-,\hat{a}_+]$ ska vara kommutativt så måste den vara lika med $1$ detta leder till:
 
-\begin{equation}
+\[
   \hat{H}(\hat{a}_+\Psi)=\hbar\omega\hat{a}_+(1+\hat{a}_+\hat{a}_-+\frac{1}{2})\Phi=\hat{a}_+(\hat{H}+\hbar\omega)\Psi=\hat{a}_+(E+\hbar\omega)\Psi
-\end{equation}
+\]
 
 Mellantermen är en konstant och kommutativ med de andra termerna:
-\begin{equation}
+\[
   \hat{H}(\hat{a}_+\Psi)=(E+\hbar\omega)\hat{a}_+\Psi
-\end{equation}
+\]
 
 Detta betyder att om $\hat{H}\Psi=E\Psi$ så är $\hat{a}_+\Psi$ en egenfunktion med egenvärde $E+\hbar\omega$.\\
 På samma sätt så ger det att $\hat{a}_-$ är en egenfunktion med egenvärde $E-\hbar\omega$.
-\begin{equation}
+\[
   \hat{H}(\hat{a}_-\Psi)=(E-\hbar\omega)\hat{a}_-\Psi
-\end{equation}
+\]
 
 Detta gör så att om man multiplicerar vågfunktionen med steg-upp-operatorn $\hat{a}_+$ så ökar energin med $\hbar\omega$ för varje gång man gör det. Och på samma sätt för steg-ner-operatorn men denna kan inte gå oändligt långt ner utan det finns ett stopp nedåt på $E_0$.
 
@@ -86,59 +96,183 @@ Detta gör så att om man multiplicerar vågfunktionen med steg-upp-operatorn $\
 Vi tar lägsta energinivån $E_0$, om vi applicerar $\hat{a}_-$: $\hat{a}_-\Psi_0=0$\\
 
 I SE:
-\begin{equation}
+\[
   \frac{d}{dx}\Psi_0+\frac{m\omega}{\hbar}x\Psi_0=0
-\end{equation}
+\]
 
 Om man integrerar detta får man:
-\begin{equation}
+\[
   \ln{\Psi_0}=-\frac{m\omega}{\hbar}\frac{x^2}{2}+c
-\end{equation}
+\]
 vilket kan skrivas om till:
-\begin{equation}
-  \Phi_0=Ae^{-\frac{m\omega}{2\hbar}x^2}
-\end{equation}
+\[
+  \Psi_0=Ae^{-\frac{m\omega}{2\hbar}x^2}
+\]
 
 För allmänn lösning så behöver vi först normera $\Psi_0$
-\begin{equation}
-  1=\int_{-\infty}^{+\infty}|A|^2e^{-(m\omega x^2)/\hbar}dx=A^2\sqrt{\frac{\pi\hbar}{m\omega}}=1
-\end{equation}
-\begin{equation}
+\[
+  1=\int_{-\infty}^{+\infty}|A|^2e^{-(m\omega x^2)/\hbar}dx=A^2\sqrt{\frac{\pi\hbar}{m\omega}}
+\]
+\[
   A =\sqrt[4]{\frac{m\omega}{\pi\hbar}}
-\end{equation}
+\]
 Vilket ger:
-\begin{equation}
-  \Phi_0=\sqrt[4]{\frac{m\omega}{\pi\hbar}}e^{-\frac{m\omega}{2\hbar}x^2}
-\end{equation}
+\[
+  \Psi_0=\sqrt[4]{\frac{m\omega}{\pi\hbar}}e^{-\frac{m\omega}{2\hbar}x^2}
+\]
 Detta är stationära tillståndet för harmoniska oscillatorn för lägsta energi.\\
 
 Hur ser $E_0$ ut?\\
 Från SE: Beräkna energi för $\Psi_0$:
-\begin{equation}
+\[
   \hat{H}=\hbar\omega(\hat{a}_+\hat{a}_-+\frac{1}{2})=\frac{1}{2}\hbar\omega\Psi_0=E_0\Psi_0
-\end{equation}
-\begin{equation}
+\]
+\[
   E_0=\frac{1}{2}\hbar\omega
-\end{equation}
+\]
 
 $\Psi_0$, $E_0$ är grundtillståndet vilket gör att de resterande är exiterade tillstånd och kan beskrivas med hjälp av att kliva uppåt med $\hat{a}_+$:\\
 
 Energi för exiterade tillstånd:
-\begin{equation}
+\[
   E_n=(n+\frac{1}{2})\hbar \omega
-\end{equation}
+\]
 
 vågfunktionen för exiterade tillstånd:
-\begin{equation}
-  \Phi_n(x)=A_n(\hat{a}_+)^n\Phi_0(x)
-\end{equation}
+\[
+  \Psi_n(x)=A_n(\hat{a}_+)^n\Phi_0(x)
+\]
 Där $n$ är större eller lika med $0$.
 
 Den generella bågfunktionen skulle då bli:
-\begin{equation}
+\[
   \Psi(x,t)=\sum_{n=0}^{\infty}c_n\Psi_n(x,t)
-\end{equation}
+\]
 
 \textbf{Titta själv på sida 45-46 och räkna på det!}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                             Lesson 6                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \newpage
+  \subsection{Analytisk metod}
+    \textbf{OBS:} \textit{Denna metod kan användas till många andra potentialer så den är mer generell än den algebraiska metoden}\\
+
+    Lösning till SE:
+    \[
+      -\frac{\hbar^2}{2m}\frac{d^2\Psi}{dx^2}+\frac{1}{2}m\omega^2x^2\Psi=E\Psi
+    \]
+    Föra över till dimensionsfri \textit{(multiplicerar med $\frac{2}{\hbar\omega}$)}:
+    \[
+      -\frac{d^2\Psi}{d\zeta^2}+\zeta^2\Psi=K\Psi
+    \]
+    Löser vi SE så får vi $K->0$ och $\zeta->\infty$ vilket ger:
+    \[
+      \Psi(\zeta)=Ae^{-\frac{\zeta^2}{2}}+Be^{\frac{\zeta^2}{2}}
+    \]
+    Här är första termen normerbar men inte andra då om $\zeta->\infty$ så går hela termen mot $\infty$.
+    \[
+      \Psi(\zeta)=h(\zeta)e^{-\frac{\zeta^2}{2}}\qquad\text{Fysikaliska Lösningen}
+    \]
+    Detta är fortfarande en exakt lösning.\\
+
+    Hur ser SE ut nu?
+    \[
+      \frac{d^2\Psi}{d\zeta^2}+(K-\zeta^2)\Psi=0
+    \]
+    Vilket när man beräknat dubbelderivatan kan skrivas som:
+    \[
+      \frac{d^2h(\zeta)}{d\zeta^2}-2\zeta\frac{dh(\zeta)}{d\zeta}+(K-1)h(\zeta)=0
+    \]
+    \begin{itemize}
+      \item För små $\zeta$ ansätts en \underline{potensserie}:\quad$h(\zeta)=\sum_{m=0}^{\infty}a_m\zeta^m$\\
+      Detta ger SE:
+      \[
+        \sum_{m=0}^{\infty}a_{m+2}(m+2)(m+1)\zeta^m-2\sum_{m=0}^{\infty}a_mm\zeta^m+(K-1)\sum_{m=0}^{\infty}a_m\zeta^m=0
+      \]
+      Potenser för $\zeta^m\Rightarrow a_{m+2}(m+2)(m+1)+(K-1-2m)a_m=0$\\
+
+      Hur ser serien ut?
+      \begin{itemize}
+        \item För stora $\mathbf{m}$ skulle serien vara propotionerlig med $\zeta^2e^{\zeta^2}$ vilken inte är normerbar. D.v.s. att serien måste ha ett högsta $m$-värde.
+      \end{itemize}
+      \[
+        (m+2)(m+1)a_{m+2}=(2m+1-K)a_m
+      \]
+      Om $K=2n+1$ då stannar serien ($K=\frac{2E}{\hbar\omega}$) vilket gör $\frac{2E}{\hbar\omega}=(2n+1)$ vilket ger:
+      \[
+        E=(n+\frac{1}{2})\hbar \omega
+      \]
+      Och detta är samma ekvation som i den algebraiska lösningen.
+    \end{itemize}
+    $h(\zeta)$ kallas för \textbf{Hermite polynom $H(\zeta)$}\\
+    SE \textit{(med $H(\zeta)$)}:
+    \[
+      \frac{d^2H_n(\zeta)}{d\zeta^2}-2\zeta\frac{dH_n(\zeta)}{d\zeta}+2nH_n(\zeta)=0
+    \]
+    Där $\Psi_n(x)$ bestämms utav:
+    \[
+      \Psi_n(x)=\sqrt[4]{\frac{m\omega}{\pi\hbar}}\frac{1}{\sqrt{2^nn!}}H_n(\zeta)e^{-\frac{\zeta^2}{2}}
+    \]
+\newpage
+\section{Potential $V(x)=0\Rightarrow$ den fria partikeln}
+  SE: $-\frac{\hbar^2}{2m}\frac{d^2\Psi}{dx^2}=E\Psi$
+  \[
+    \frac{d^2\Psi}{dx^2}+\frac{E2m}{\hbar^2}\Psi=0
+  \]
+  Partikeln kan ha alla energier $(E>0)$.\\
+  Lösningen:
+  \[
+    \Psi(x)=Ae^{ikx}+Be^{-ikx}
+  \]
+  Allmänna lösningen:
+  \[
+    \Psi(x,t)=Ae^{ikx}e^{-i\frac{E}{\hbar}t}+Be^{-ikx}e^{-i\frac{E}{\hbar}t}
+  \]
+  Med $\frac{E2m}{\hbar^2}=k^2\quad\Rightarrow\quad E=\frac{\hbar^2k^2}{2m}$
+  \[
+    \pm ikx-i\frac{\hbar k^2}{2m}t=\pm ik\big(s\mp\frac{\hbar k}{2m}t\big)
+  \]
+  \[
+    \Psi(x,t)=Ae^{ik\big(x-\frac{\hbar k}{2m}t\big)}+Be^{-ik\big(x+\frac{\hbar k}{2m}t\big)}
+  \]
+  Där första termen är en våg som går åt höger och andra en våg som går åt vänster.\\
+  Skriver vi $\Psi(x,t)$ mer kompakt:
+  \[
+    \Psi_k(x,t)=Ae^{i\big(kx-\frac{\hbar k^2}{2m}t\big)}
+  \]
+  Där $k=\pm\frac{\sqrt{2mE}}{\hbar}$\\
+
+  Vågnummer:\quad $k=\frac{2\pi}{\lambda}$\\
+  Våglängd:\quad $\lambda=\frac{2\pi}{|k|}$\\
+  Våghastighet:
+  \[
+    V_{quantum}=\frac{\hbar |k|}{2m}=\sqrt{\frac{E}{2m}}
+  \]
+  \[
+    V_{classic}=\sqrt{\frac{2E}{m}}
+  \]
+  \begin{enumerate}
+    \item $V_{quantum}=\frac{V_{classic}}{2}$
+    \item \textbf{Normering?}\\
+    $\Psi(x,t)=Ae^{i(kx-\frac{\hbar k^2}{2m}t)}$ går ej att normera.
+    \textbf{Fri partikel kan ej beskrivas med stationärt tillstånd!}
+  \end{enumerate}
+  Bygg ett \textbf{vågpaket}:
+  \[
+    \Psi(x,t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\phi(k)e^{i(kx-\frac{\hbar k^2}{2m}t)}dk
+  \]
+  Denna är normerbar!\\
+  Om $\Psi(x,0)$ känd $rightarrow\phi(k)$ [Plauchelet's theorem]:
+  \[
+    \phi(k)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\Psi(x,0)e^{-ikx}dx
+  \]
+  alla $\omega(k)$:
+  \begin{itemize}
+    \item Taylor expansion ($k_0\rightarrow\omega(k)\approx\omega_0+\omega_0'(k-k_0)$)
+    \item variabel $\omega(k)=\frac{\hbar k^2}{2m}$
+  \end{itemize}
+  \[
+    \Psi(x,t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\phi(k)e^{i(kx-\omega t)}dk
+  \]
 
 \end{document}
