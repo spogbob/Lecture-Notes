@@ -59,21 +59,106 @@
 
 \newpage
 \section*{Uppgift 2}
-  \subsection*{Beskriv vad som menas med fasmatchning. Skriv ner sambanden mellan de olika rikningscosinerna ($\{s_x,s_y,s_z\}$) vid gränsytan mellan de två mediumen.}
-    Fasmatchning går ifrån när ljus kommer från ett medium med brytningsindex $n_1$ till ett annat medium med brytningsindex $n_2$ så måste det inkommande ljuset och de utgående ljuset ha samma fas i brytningsytan. Detta leder till att riktningsvektorn $\bar{s}$ för ljuset förändras för det utgående ljuset för att bibehålla samma fas, alltså ljuset bryts till en annan vinkel.\\
-    Anledningen till att fasen måste vara samma i ytan mellan de två mediumen är för att vågorna ska fortsätta kontinuerligt.\\
+  \subsection*{A - Beskriv vad som menas med fasmatchning. Skriv ner sambanden mellan de olika rikningscosinerna ($\{s_x,s_y,s_z\}$) vid gränsytan mellan de två mediumen.}
 
-    Fasmatchning är beskrivet med hjälp av likheterna $\bar{f_1}\cdot\bar{r} = \bar{f_2}\cdot\bar{r} = \bar{f_3}\cdot\bar{r}$. Om vi sätter vektorerna i $yz$-planet så får vi vektorerna:
+    Fasmatchning kommer ifrån när ljus bryts i ett medium så ändras riktningen samt våglängden, detta gör så att för att bibehålla kontinuerligteten i vågen så kan fasen på den utgående vågen behövas att fasförflyttas. \\
+
+    De olika riktningscosinerna kan beskrivas om man lägger vågen i $yz$-planet genom:
     \[
-      \bar{f_1}=\frac{n_1}{\lambda_0}(0,\sin{\theta_1}, \cos{\theta_1})
+      \bar{s_1} =
+      \begin{bmatrix}
+        s_{x1}\\s_{y1}\\s_{z1}
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        0\\\sin{\theta_1}\\\cos{\theta_1}
+      \end{bmatrix}
+      \qquad\qquad
+      \bar{s_2} =
+      \begin{bmatrix}
+        s_{x2}\\s_{y2}\\s_{z2}
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        0\\\sin{\theta_2}\\\cos{\theta_2}
+      \end{bmatrix}
+    \]
+    Där $s_1$ är den infallande vinkeln och $s_2$ är utfallande vinkeln. $\theta_2=\arcsin{\big(\frac{n_1}{n_2}\sin{\theta_1}\big)}$
+
+  \subsection*{B - Skriv ner sambanden för Fresnels ekvationer för p-polariserat ljus och hur de förhåller sig till riktningscosinerna och brytningsindexen.}
+    Fresnels ekvationer för de p-polariserade ljuset kan beskrivas med följande ekvationer:
+    \[
+      r_p = \frac{n_1s_{z2}-n_2s_{z1}}{n_1s_{z2}+n_2s_{z1}}
     \]
     \[
-      \bar{f_2}=\frac{n_1}{\lambda_0}(0,\sin{\theta_2}, \cos{\theta_2})
+      t_p = \frac{2n_1s_{z1}}{n_1s_{z2}+n_2s_{z1}}
     \]
+    Där $r_p$ och $t_p$ är reflektion- respektive transmissionskoefficienter.
+
+  \subsection*{C - Beräkna samtliga riktningscosiner och transmissionskoefficienter ($t_p$) för fallen: \textbf{I} $\theta_1=20^{\circ}$, $n_1=1$, $n_2=1.6$ och \textbf{II} $\theta_1=20^{\circ}$, $n_1=1.6$, $n_2=1$}
+    \textbf{FALL I:}\\
+    $\theta_2\approx12.3429^{\circ}$\\
+    Riktningscosinerna:
     \[
-      \bar{f_3}=\frac{n_1}{\lambda_0}(0,\sin{\theta_3}, -\cos{\theta_3})
+      \bar{s_1} =
+      \begin{bmatrix}
+        0\\0.3420\\0.9397
+      \end{bmatrix}
+      \qquad\qquad
+      \bar{s_2} =
+      \begin{bmatrix}
+        0\\0.2138\\0.9769
+      \end{bmatrix}
     \]
-    Där $\theta_1$ \& $\theta_2$ är infalls- respektive utfallsvinkeln samt $\theta_3$ är reflektionsvinkeln
+    Transmissionskoefficienten:
+    \[
+      t_p = \frac{2\times1\times0.9397}{1\times0.9769+1.6\times0.9397}\approx0.7577
+    \]
+
+    \textbf{FALL II:}\\
+    $\theta_2\approx12.3429^{\circ}$\\
+    Riktningscosinerna:
+    \[
+      \bar{s_1} =
+      \begin{bmatrix}
+        0\\0.3420\\0.9397
+      \end{bmatrix}
+      \qquad\qquad
+      \bar{s_2} =
+      \begin{bmatrix}
+        0\\0.2138\\0.9769
+      \end{bmatrix}
+    \]
+    Transmissionskoefficienten:
+    \[
+      t_p = \frac{2\times1.6\times0.9397}{1.6\times0.9769+1\times0.9397}\approx1.2015
+    \]
+
+\section*{Uppgift 3}
+  \subsection*{Beräkna energitransmitansen $T$ för bägge fallen i uppgift 2c}
+    \textbf{FALL I:}
+    \[
+      T=|t_p|^2\frac{n_2s_{z2}}{n_1s_{z1}}=|0.7577|^2\frac{1.6\times0.9769}{1\times0.9397}\approx0.9549
+    \]
+    \textbf{FALL II:}
+    \[
+      T=|t_p|^2\frac{n_2s_{z2}}{n_1s_{z1}}=|1.2015|^2\frac{1\times0.9769}{1.6\times0.9397}\approx0.9380
+    \]
+\section*{Uppgift 4}
+  \subsection*{A - Beskriv vad som menas med Brewstervinkeln, $theta_B$, och den kritiska vinkeln, $\theta_C$, samt hur dessa förhåller sig till brytningsindex och infallande vinklar.}
+    Brewservinkeln är den vinkeln där allt ljus som reflekteras är polariserat och vinkeln bestämms utav ekvationen: $\theta_B=\arctan{\big(\frac{n_2}{n_1}\big)}$\\
+
+    Kritiska vinkeln är en vinkel som när man har en vinkel som är större så transmiteras inget ljus, den betämms utav ekvationen: $\theta_C=\arcsin{\big(\frac{n_2}{n_1}\big)}$
+
+  \subsection*{Beräkna Brewstervinkeln $\theta_B$ för fallet $n_1=1$, $n_2=1.6$. Beräkna den kritiska vinkeln $\theta_C$ för fallet $n_1=1.6$, $n_2=1$}
+    Brewservinkeln:
+    \[
+      \theta_B=\arctan{\big(\frac{1.6}{1}\big)}=57.99
+    \]
+    Kritiska vinkeln:
+    \[
+      \theta_C=\arcsin{\big(\frac{1}{1.6}\big)}=38.68
+    \]
 
 
 \end{document}
