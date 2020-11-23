@@ -275,4 +275,117 @@ Den generella bågfunktionen skulle då bli:
     \Psi(x,t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\phi(k)e^{i(kx-\omega t)}dk
   \]
 
+\section{Potential barriär \textit{(potential step)}}
+  Potetnialen $V(x)$ består utav en stegfunktion så att den går mot oändligheten åt ena hållet med värdet $0$ och sedan ett värde $V_0$ åt andra hållet.
+  \[
+    V(x) = V_0H(x) =
+    \begin{cases}
+      0, & x<0\\
+      V_0, & x>0
+    \end{cases}
+  \]
+  $H(x)$ är heaviside funktionen.\\
+
+  \textbf{FALL I: Om $V=0$, $x<0$}
+    \[
+      \frac{d^2\Psi}{dx^2}+k^2\Psi,\quad k^2=\frac{2m}{\hbar^2}E
+    \]
+    Egenfunktion:
+    \[
+      \Psi(x)=Ae^{ikx}+Be^{-ikx}
+    \]
+    Om vågen kommer från vänster så kommer en reflekterande tillbaka
+
+  \textbf{FALL II: Om $V=V_0$, $x>0$}
+    \[
+      \frac{d^2\Psi}{dx^2}+q^2\Psi,\quad q^2=\frac{2m}{\hbar^2}(E-V_0)
+    \]
+    Egenfunktion:
+    \[
+      \Psi(x)=Ce^{iqx}
+    \]
+    Här blir det ingen reflekterad våg.\\
+
+    \begin{itemize}
+      \item vågfunktionen $\Psi(x)$ är kontinuerlig
+      \item $\frac{d\Psi}{dx}$ är kontinuerlig (Om $V$ är ändlig)
+    \end{itemize}
+
+    Vid randen mellan de två olika lösningarna matchar vi de två vågekvationerna.\\
+    Vid $x=0$
+    \[
+      Ae^{ik0}+Be^{-ik0}=Ce^{iq0}\Longrightarrow A+B=C
+    \]
+    För stationära tillstånd i 1D: \textbf{Probability current density} \textit{(se problem 1.14)}:\\
+    \textbf{FALL I}
+    \[
+      j=\frac{\hbar}{2im}(\Psi^*\frac{d\Psi}{dx}-\frac{d\Psi^*}{dx}\Psi)=\frac{\hbar}{2im}\bigg((A^*e^{-ikx}+B^*e^{ikx})(Ae^{ikx}-Be^{-ikx})-(-A^*ike^{-ikx}+B^*ike^{ikx})(Ae^{ikx}-Be^{-ikx})\bigg)
+    \]
+    \[
+      j=\frac{\hbar k}{2m}(|A|^2-|B|^2)
+    \]\\
+    \textbf{FALL II}
+    \[
+      \Psi(x)=Ce^{iqx}
+    \]
+    \[
+      j=\frac{\hbar q}{m}|C|^2
+    \]
+    Strömmen i (\textbf{I, II}) ska vara lika vid $x=0$:
+    \[
+      j_I=j_{II}
+    \]
+    Derivatan är kontinuerlig vid $x=0$
+    \[
+      \bigg(\frac{d\Psi}{dx}\bigg)_I=Aike^{ikx}-Bike^{-ikx}
+    \]
+    \[
+      \bigg(\frac{d\Psi}{dx}\bigg)_{II}=Ciqe^{ikx}
+    \]
+    \textbf{DEF:} Reflexionskoefficient
+    \[
+      R=\frac{\frac{\hbar k}{m}|B|^2}{\frac{\hbar k}{m}|A|^2}=\frac{|B|^2}{|A|^2}
+    \]
+    \textbf{DEF:} Transmissionskoefficient
+    \[
+      T=\frac{q|C|^2}{k|A|^2}
+    \]
+    Uttrycka koeficienterna i endast $k$ och $q$:
+    \[
+      R=\frac{(k-q)^2}{(k+q)^2}
+    \]
+    \[
+      T=\frac{4kq}{(k+q)^2}
+    \]
+    Beskrivet med energi och potential:
+    \[
+      R=\frac{(1-\sqrt{1-\frac{V_0}{E}})^2}{(1+\sqrt{1-\frac{V_0}{E}})^2}
+    \]
+    \[
+      T=\frac{4\sqrt{1-\frac{V_0}{E}}}{(1+\sqrt{1-\frac{V_0}{E}})^2}
+    \]
+\section{Potential barriär}
+  En potential barriär är en fyrkantspuls.
+  \[
+    V(x) = V_0(H(x+a)-H(x-a))
+  \]
+  Man kan dela upp det i tre fall, innan, i och efter barriären.\\
+
+  \textbf{FALL II} i barriären:
+  \[
+    \kappa^2 = \frac{-2m(E-V_0)}{\hbar^2}
+  \]
+Lösningen: $\Psi_{II}=Ce^{-\kappa x}+De^{\kappa x}$\\
+
+\textbf{FALL I} $\Psi_I=Ae^{ikx}+Be^{-ikx}$\\
+
+\textbf{FALL III} $\Psi_{III}=Ee^{ikx}$\\
+
+T ges utav:
+\[
+  |T|^2=\frac{2k\kappa}{(k^2+\kappa^2)^2\sinh^2{(2\kappa a)}+(2k\kappa)^2}
+\]
+Detta kallas \textit{Tunneling}
+
+
 \end{document}
