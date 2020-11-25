@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage{amssymb}
 
 \begin{document}
   \section{Vågoptik}
@@ -171,5 +172,62 @@
       U^+=A_0e^{-ik(a-\frac{y^2}{2f})}
     \]
     Om man istället tar ett exempel med en negativ lins så kommer $f=-|f|$ vilket leder till $b=\frac{a|f|}{|f|+a}$. Detta gör så att det kommer att vara divergerande vågor både före och efter linsen.
+
+\newpage
+\section{Stråloptik}
+  \subsection{Gaussisk stråle}
+    Sammansatt monokromatisk våg:
+    \[
+      U(\bar{r})=\int_{\pm NA}U(\bar{s})e^{-ik\bar{s}\cdot\bar{r}}d\bar{s}
+    \]
+    Gaussisk profil:
+    \[
+      U(\bar{s})=A_0\pi \omega_0^2e^{-\frac{s_x^2+s_y^2}{\sigma_s^2}}
+    \]
+    där $\bar{s}\approx x_x\hat{x}+s_y\hat{y}+\hat{z}$.\\
+    Om man sätter ihop de två ovanstående ekvationerna så får man:
+    \[
+      \Rightarrow U(\bar{r})=A_0\pi\omega_0^2e^{-ikz}\int_{\pm NA}e^{-\frac{s_x^2+s_y^2}{\sigma_s^2}}e^{-ik(s_xx+s_yy)}ds_xds_y
+    \]
+
+    Lösning på formen:
+    \[
+      U(\bar{r})=A(\bar{r})e^{-ikz}
+    \]
+    \[
+      A(\bar{r})=\frac{A_1}{q(z)}e^{-ik\frac{\rho^2}{2q(z)}};\quad\rho^2=x^+y^2
+    \]
+    Strål parameter:
+    \[
+      q(z)=z+iz_0
+    \]
+    $z_0$ definerar strålens samtliga egenskaper. \\
+
+    Utveckla $q(z)$:
+    \[
+      A(\bar{r})=A_0\frac{\omega_0}{\omega(z)}e^{-\frac{\rho^2}{\omega^2(z)}}e^{-ik\frac{\rho^2}{2R(z)}+i\rho(z)}
+    \]
+    \[\begin{cases}
+      \omega(z)=\omega_0\sqrt{1+\big(\frac{z}{z_0}\big)^2};&\text{Radie}\\
+      R(z)=z\bigg(1+\big(\frac{z_0}{z}\big)^2\bigg);&\text{Faskrökning}\\
+      \rho(z)=\arctan{\frac{z}{z_0}};&\text{Fasskift}\\
+      \omega_0=\sqrt{\frac{\lambda z_0}{\pi}};&\text{Midjeradie}\\
+      \theta_0=\sigma_s=NA=\frac{\omega_0}{z_0}=\frac{\lambda}{\pi\omega_0};&\text{Divergensvinkel}
+    \end{cases}\]
+    Notera sambanden:
+    \[
+      z_0=\frac{\pi\omega_0}{\lambda}\Rightarrow\text{Smal midja, kort skärpedjup}
+    \]
+    \[
+      \theta_0=\frac{\omega_0}{z_0}=\frac{\lambda}{\pi\omega_0}\Rightarrow\text{Smal midja, stor divergens}
+    \]
+    $\therefore$ smal midja $\Rightarrow$ \textit{"Snabbt sfärisk vågtyp"}\\
+
+    Intensitetsfördelningen:
+    \[
+      I(\rho,z)=\frac{2\rho}{\pi\omega^2(z)}e^{-\frac{2\rho^2}{\omega^2(z)}}
+    \]
+
+
 
 \end{document}
