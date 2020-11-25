@@ -2,6 +2,12 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
+\newcommand\varmp{\mathbin{\vcenter{\hbox{%
+  \oalign{$\scriptstyle({+})$\cr
+          \noalign{\kern-.3ex}
+          \hfil$\scriptscriptstyle-$\hfil\cr}%
+}}}}
+
 \begin{document}
   \section{Vågoptik}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -227,6 +233,77 @@
     \[
       I(\rho,z)=\frac{2\rho}{\pi\omega^2(z)}e^{-\frac{2\rho^2}{\omega^2(z)}}
     \]
+
+  \subsection{Mainpulation av gaussisik stråle}
+    Vid avbildning av en stråle med midja i $z_1=0$ genom en lins och sedan ihop igen i $z_2=0$ (fokus). På vänstra sidan beskrivs strålen med $z_{01}$ och på högra sidan $z_{02}$. Randvilkoret säger att båda strålarna ska ha samma bredd i linsen. Detta kan bskrivas med:
+    \[
+      \textbf{R.V.}\qquad\omega_1(L_1)=\omega_2(-L_2)
+    \]
+    \[
+      \begin{cases}
+        \omega_1(L_1)=\omega_{01}\sqrt{1+\big(\frac{L_1}{z_{01}}\big)^2};&\omega_{01}=\sqrt{\frac{\lambda z_{01}}{\pi}}\\
+        \omega_2(-L_2)=\omega_{02}\sqrt{1+\big(\frac{L_2}{z_{02}}\big)^2};&\omega_{02}=\sqrt{\frac{\lambda z_{02}}{\pi}}
+      \end{cases}
+    \]
+    Faskrökningen över linsen:
+    \[
+      \phi_{1-2}=-k\frac{\rho^2}{2R_1(L_1)}+k\frac{\rho^2}{2f}=-k\frac{\rho^2}{2R_2(-L_1)}
+    \]
+    Vilket ger:
+    \[
+      \frac{1}{f}=\frac{1}{R_1(L_1)}-\frac{1}{R_2(-L_2)};\qquad\textit{("Linsformeln")}
+    \]
+    Generellt sätt att behandla avbildning och manipulation av gaussisk stråle är sambandet:
+    \[
+      q_2=\frac{Aq_1+B}{Cq_1+D};\qquad M=
+      \begin{bmatrix}
+        A&B\\
+        C&D
+      \end{bmatrix}
+    \]
+    \textbf{Exempel:} Translation en sträcka $z=d$ från fokus.
+    \[
+      M=
+      \begin{bmatrix}
+        1&d\\
+        0&1
+      \end{bmatrix};\qquad q_1=iz_0
+    \]
+    \[
+      q_2=\frac{iz_0+d}{1}=d+iz_0
+    \]
+  \subsection{Integralen av en exponentialfunktion}
+    Integralen: $g(a,b,c)=\int_{-\infty}^{\infty}Ae^{-ax^2+bx+c}dx$ har lösningen:
+    \[
+      g(a,b,c)=A\sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}+c}
+    \]
+    \textbf{Exempel:} Gaussisk puls.
+    \[
+      \begin{cases}
+        U(z,t)=\int A(\nu)e^{i2\pi \nu\tau}d\nu\\
+        A(\nu)=A_0e^{-\frac{(\nu\mp\nu_0)^2}{\sigma_{\nu}^2}}
+        \tau=t-\frac{z}{c}
+      \end{cases}
+    \]
+    Identifikation och variabelbyte: $\zeta=\nu-\nu_0$
+    \[
+      A_0\int e^{-\frac{\zeta^2}{\sigma_{\nu}^2}}e^{i2\pi\zeta\tau}e^{i2\pi\nu_0\tau}d\zeta
+    \]
+    \[
+      \rightarrow a=\frac{1}{\sigma_{\nu}^2};\quad b=i2\pi\tau;\quad c=i2\pi\nu_0\tau
+    \]
+    \[
+      U(z,t)=A_0\sigma_{\nu}\sqrt{\pi}e^{-\frac{\tau^2}{\sigma_{\tau}^2}}e^{i2\pi\nu_0\tau};\quad\sigma_{\tau}=\frac{1}{\pi\sigma_{\nu}}
+    \]
+    Integralen för 2-dimensioner:
+    \[
+      g(a,b_x,b_y,c)=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} Ae^{(-a(x^2+y^2)+b_xx+b_yy+c)}dxdy
+    \]
+    Har lösningen:
+    \[
+      a(a,b_x,b_y,c)=A\frac{\pi}{a}e^{\frac{b_x^2+b_y^2}{4a}+c}
+    \]
+
 
 
 

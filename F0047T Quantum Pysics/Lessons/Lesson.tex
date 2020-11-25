@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                               Title                               %
@@ -386,6 +387,110 @@ T ges utav:
   |T|^2=\frac{2k\kappa}{(k^2+\kappa^2)^2\sinh^2{(2\kappa a)}+(2k\kappa)^2}
 \]
 Detta kallas \textit{Tunneling}
+
+\newpage
+\section*{ Kapitell 3: Formalism}
+  I kvant: \textbf{vågfunktioner} och \textbf{operatorer}. En vågfunktion är normerad då:
+  \[
+    \int \Psi^*\Psi=1,\quad |\Psi|^2\;-\;\text{kvadratiskt integererbara}
+  \]
+  $\Rightarrow$ möjliga vågfunktioner finns i ett \textbf{Hilbert rum}.\\
+
+  Den \textbf{inre produkten} (skalärprodukten):
+  \textbf{DEF:}
+  \[
+    \int_a^b f^*(x)g(x)dx = <f|g>
+  \]
+  \[
+    \int g^*f=(\int f^*g)^*\Longrightarrow<g|f>=<f|g>^*
+  \]
+  Om $<f_m|f_n>=\int f_m^*f_ndx=\delta_{mn}$ så är de ortogonala och normerbara.\\
+  $\{f_n\}$: ortonormalt set.\\
+
+  Vidare så utgör alla mängder $\mathbf{f_n}$ ett fullständigt set, vilket innebär att en funktion i Hilbert rummet kan skrivas på följande sätt:
+  \[
+    f(x)=\sum_{n=1}^{\infty}c_nf_n(x)
+  \]
+  om $<f_m|f_n>=\delta_{mn}$ så är $c_n=<f_n|f>$ \textit{(Fourier)}
+
+  \subsection*{Operatorer \textbf{Hermitiska}}
+    Alla operatorer i kvant är \textbf{Hermitiska}
+    \[
+      <Q>=\int\Psi^*\hat{Q}\Psi dx=<\Psi|\hat{Q}\Psi>
+    \]
+    En mätning ger \textbf{reella} resultat.
+    \[
+      <Q>=<Q>^*
+    \]
+    \[
+      <\Psi|\hat{Q}\Psi>=<\hat{Q}^*\Psi|\Psi>=<\hat{Q}\Psi|\Psi>=<\hat{Q}\Psi|\Psi>^*,\quad\text{För alla }\Psi
+    \]
+    \[
+      \Longrightarrow\text{så för alla operatorer gäller} <f|\hat{Q}f>=<\hat{Q}f|f>,\quad\text{För alla }f(x)
+    \]
+    Mot en observerbar storhet $\rightarrow$ motsvarar en operator `
+    \[
+      <f|\hat{Q}g>=<\hat{Q}f|g>,\quad\text{Hermitisk operator }\hat{Q}
+    \]
+    \[
+      <f|\hat{Q}g>=<\hat{Q}^+f|g>,\quad\text{Hermitisk konjugat}
+    \]
+    Här i kvant är $\Hat{Q}=\hat{Q}^+$ för Hermitiska ekvationer.
+
+  \subsection*{Egentillstånd}
+    Om $\Psi$ är egentillstånd till $\hat{Q}$ med egenvärde $q$: $\hat{Q}\Psi=q\Psi$\\
+    \textit{T.ex:} $\hat{H}\Psi=E\Psi$ (TOSE).\\
+
+    $\sigma$ - Standardavvikelsen
+    \[
+      \Rightarrow \sigma^2=<(Q-<Q>)^2>=<\Psi|(Q-<Q>)^2|\Psi>=Q^2-2Q<Q>+<Q>^2=
+    \]
+    \[
+      =<(Q-<Q>)\Psi|(Q-<Q>)\Psi>=0
+    \]
+    \begin{itemize}
+      \item Uppsättningen av \textbf{egenvärdena} till en operator kallas för \textbf{spektrat}.
+      \item Om $2$ olika \textbf{egenfunktioner} har samma \textbf{egenvärden} så kallas de \textbf{degenererat}
+      \item Det är inte säkert att dessa $2$ \textbf{egenfunktionerna} är ortogonala men man kan använda \textbf{Gram-Schmidt} för att göra dem det. \textit{se problem A4 i Appendix)}
+    \end{itemize}
+
+  \subsection*{Egenfunktioner}
+    \textbf{Spektrum}:
+    \begin{itemize}
+      \item Disktet \textit{(Harmonisk oscillator, partikel i $\infty$ låda)}
+      \item Kontinuerlig \textit{Fri partikel}
+    \end{itemize}
+    \textbf{Disktet:} Diskreta egenvärden och egentillstånden är normerbara\\
+
+    \textbf{Kontinurelig:} Egenfunktionen går inte att normera \textit{t.ex. $e^{ikx}\rightarrow\infty$}
+    \begin{itemize}
+      \item Partikel i icke $\infty$ låda har både diskret och kontinuerligt spektra.\\
+
+      \textbf{Diskret spektrum:}
+      \begin{enumerate}
+        \item Egenvärden är \textbf{reella}
+        \[
+          \hat{Q}f=qf,\quad\text{\textbf{Diskreta}, $\hat{Q}$ Hermitisk}
+        \]
+        \item Olika egenvärden $\Rightarrow$ Egenfunktionerna ortogonala
+        \[
+          \hat{Q}f=qf\quad\text{och}\quad\hat{Q}g=q'g,\text{ där $\hat{Q}$ Hermitisk}
+        \]
+        \[
+          <f|\hat{Q}g>=<\hat{Q}f|g>
+        \]
+        då $q'\neq q\Rightarrow<f|g>=0\quad\textit{(Ortogonala)}$
+      \end{enumerate}
+      \textbf{Kontinuerligt spektrum:} \textit{(egenfunktion ej normerbar)}\\
+      (Se exempel 3.2)
+      \[
+        f_p(x)=\frac{1}{\sqrt{2\pi\hbar}}e^{i\frac{p_x}{\hbar}}
+      \]
+      där $<f_{p'}|f_p>=\delta_{mn}(p-p')\text{ och }p\in\mathbb{R}$
+
+    \end{itemize}
+
+    \textbf{\textit{(GÅ IGENOM EXEMPEL 3.8)}} (Kan skippa 3.6.3)
 
 
 \end{document}
