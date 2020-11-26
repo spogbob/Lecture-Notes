@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+  \title{F0048T: Datorövning: Gaussisk stråle}
+  \author{Simon Johnsson \textit{johsim-7@student.ltu.se}}
+  \date{\today}
+  \maketitle
+
+\section*{Uppgift 1:}
+  Den komplexa amplituden för en gaussisk stråle är definerad utav ekvationen:
+  \[
+    U(\bar{r})=A_0\frac{W_0}{W(z)}e^{-\frac{\rho^2}{W^2(z)}}e^{-ikz-ik\frac{\rho^2}{2R(z)}+i\zeta(z)};\qquad\rho^2=x^2+y^2
+  \]
+  Uttryck $A_0$ i termer av effekten $P$, våglängden $\lambda$ och skärpedjupet $z_0$. Vi använder ekvationerna nedan för att skriva om $A_0$ på önskat sätt.
+  \[
+    \begin{cases}
+      \text{Intensitet}&I_0=|A_0|^2\\
+      \text{Effekt}&P=\frac{1}{2}I_0(\pi W_0^2)\\
+      &W_0=\sqrt{\frac{\lambda z_0}{\pi}}
+    \end{cases}
+  \]
+  Omskrivningarna ger:
+  \[
+    A_0=\sqrt{I_0}=\sqrt{\frac{2P}{\pi W_0^2}}=\sqrt{\frac{2P}{\pi \frac{\lambda z_0}{\pi}}}=\sqrt{\frac{2P}{\lambda z_0}}
+  \]
+
+\newpage
+\section*{Uppgift 2:}
+  \subsection*{Första uttrycket}
+    För att beskriva $q_2$ som en funktion $q_1$ och linsens fokallängd $f$ så används ekvationen:
+    \[
+      q_2=\frac{Aq_1+B}{Cq_1+D}
+    \]
+    Där konstanterna kan bestämmas med hjälp av matrismetoden där vi använder matrisen för en tunn lins.
+    \[
+      \begin{bmatrix}
+        A&B\\
+        C&D
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        1&0\\
+        -\frac{1}{f}&1
+      \end{bmatrix}
+    \]
+    Vid ihopslagning av de två ekvationerna så får vi:
+    \[
+      q_2=\frac{q_1}{-\frac{q_1}{f}+1}=\frac{fq_1}{f-q_1}
+    \]
+
+  \subsection*{Andra uttrycket}
+    För att göra ett uttryck för fokallängden $f$ med endast $q_1$ och den laterala förstoringen $M$ så startars det från svaret i den tidigare delen:
+    \[
+      q_2=\frac{fq_1}{f-q_1}\Longrightarrow f=\frac{q_1q_2}{q_2-q_1}
+    \]
+    Först används uttrycket $q_2=-z'+iz_0'$
+    \begin{equation}
+      f=\frac{q_1(-z'+iz_0')}{-z'+iz_0'-q_1}
+      \label{eq:f}
+    \end{equation}
+
+    Sedan behövs både $z'$ och $z_0'$ tas bort ur uttrycket. En ekvation för $z_0'$ kan tas fram ifrån ekvationen för fokusdjupet, $2z_0'=M^2(2z_0)$. Sedan för att göra en ekvation för $z_0$ så används randvilkoret, $W(z)=W(-z')$, samt förhållandet för strålmidjorna, $W_0'=MW_0$:
+    \[
+      W(z)=W(-z')\Rightarrow W_0\sqrt{1+\big(\frac{z}{z_0}\big)^2}=MW_0\sqrt{1+\big(\frac{z}{z_0}\big)^2}\Rightarrow z'=\frac{z_0'}{M}\sqrt{1+\big(\frac{z}{z_0}\big)^2-M^2}
+    \]
+    Detta ger:
+    \[
+      \begin{cases}
+        z_0'=M^2z_0\\
+        z'=Mz_0\sqrt{1+\big(\frac{z}{z_0}\big)^2-M^2}
+      \end{cases}
+    \]
+    Vid insättning av dessa i ekvation (\ref{eq:f}), skriva om $z=Re\{q_1\}$ och $z_0=Im\{q_1\}$ samt omskrivning så får vi:
+    \[
+      f=\frac{q_1\big(\sqrt{1+\frac{Re\{q_1\}}{Im\{q_1\}}-M^2}-iM\big)}{\sqrt{1+\frac{Re\{q_1\}}{Im\{q_1\}}-M^2}-iM+\frac{q_1}{Im\{q_1\}M}}
+    \]
+
+\newpage
+\section*{Uppgift 3:}
+  Att kollimera en stråle innebär att strålens ljus parallellriktas. För att beräkna en lämplig kollimeringslins, $f$, så används ekvationen:
+  \[
+    f=\frac{q_1q_2}{q_2-q_1}
+  \]
+  Givet är $q_1=(100+i20)\mu m$ samt för att kollimera en stråle så är $W_0'=W(z)$ och realdelen av $q_2$ är lika med $0$. För att beräkna $q_2$:
+  \[
+    W(z)=W_0'\Rightarrow
+    \begin{cases}
+      W(z)=\sqrt{\frac{\lambda z_0}{\pi}\bigg(1+\big(\frac{z}{z_0}^2\big)\bigg)}\\
+      W_0'=\sqrt{\frac{\lambda z_0'}{\pi}}
+    \end{cases}
+    \Rightarrow z_0'=z_0(1+\big(\frac{z}{z_0}\big)^2)
+  \]
+  \[
+    q_2=iz_0(1+\big(\frac{z}{z_0}\big)^2)=\frac{i(z^2+z_0^2)}{z_0}
+  \]
+  Insättning i formeln för fokallängden blir:
+  \[
+    f=\frac{z^2+z_0^2}{z}
+  \]
+  Och numeriskt där $q_1$ ger $z=100\mu m$ och $z_0=20\mu m$
+  \[
+    f=\frac{(100\times10^{-6})^2+(20\times10^{-6})}{100\times10^{-6}}=\mathbf{104\mu m}
+  \]
+
+\end{document}
