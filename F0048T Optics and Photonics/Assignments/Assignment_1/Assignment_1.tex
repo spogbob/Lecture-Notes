@@ -16,7 +16,7 @@
       \item Vågtalet $k$ används för att ge ekvationerna en enklare form, vågtalet representerar $k=\frac{2\pi}{\lambda}$
       \item Riktningsvektorn $\bar{s}$ är en vektor som beskriver i vilken riktning som vågen propagerar
       \item positionsvektorn $|\bar{r}|$ betecknar vilket avstånd $U$ mäts på från ljuskällan
-      \item Faskonstanten $\alpha$ betecknar vilken fasförskjutning ljuset har ut från ljuskällan (här då $\bar{r}=0$)
+      \item Faskonstanten $\alpha$ betecknar förskjutning av vågen i propageringsriktningen, $\bar{s}$.
     \end{itemize}
   \subsection*{B - Beskriv hur intensiteten beräknas från den komplexa amplituden och vad som menas med den komplexa amplitudens fas}
     Intensiteten för den komplexa amplituden beräknas med hjälp av
@@ -63,7 +63,16 @@
 
     Fasmatchning kommer ifrån när ljus bryts i ett medium så ändras riktningen samt våglängden, detta gör så att för att bibehålla kontinuerligteten i vågen så kan fasen på den utgående vågen behövas att fasförflyttas. \\
 
-    De olika riktningscosinerna kan beskrivas om man lägger vågen i $yz$-planet genom:
+    För fasmatchning så används likheten att vågen i första mediet ska vara lika som vågen i det andra mediet i brytningsytan vilket ger ekvationen:
+    \[
+      \bar{f_1}\cdot\bar{r}=\bar{f_2}\cdot\bar{r}=\bar{f_3}\cdot\bar{r}
+    \]
+    Där $\bar{r}$ är en vektor i brytningsytan, $\bar{f_1}$, $\bar{f_2}$ och $\bar{f_3}$ är vektorer som beskriver den infallande, utfallande respektive reflekterade vågen. Givet av:
+    \[
+      \bar{f_1}=\frac{n_1}{\lambda_0}\bar{s_1},\quad\bar{f_1}=\frac{n_2}{\lambda_0}\bar{s_2},\quad\bar{f_1}=\frac{n_1}{\lambda_0}\bar{s_3}
+    \]
+
+    Där $\lambda_0$ är våglängden i vakum och de olika riktningscosinerna kan beskrivas om man lägger vågen i $yz$-planet genom:
     \[
       \bar{s_1} =
       \begin{bmatrix}
@@ -72,8 +81,8 @@
       =
       \begin{bmatrix}
         0\\\sin{\theta_1}\\\cos{\theta_1}
-      \end{bmatrix}
-      \qquad\qquad
+      \end{bmatrix},
+      \quad
       \bar{s_2} =
       \begin{bmatrix}
         s_{x2}\\s_{y2}\\s_{z2}
@@ -81,9 +90,23 @@
       =
       \begin{bmatrix}
         0\\\sin{\theta_2}\\\cos{\theta_2}
+      \end{bmatrix},
+      \quad
+      \bar{s_3} =
+      \begin{bmatrix}
+        s_{x3}\\s_{y3}\\s_{z3}
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        0\\\sin{\theta_3}\\-\cos{\theta_3}
       \end{bmatrix}
     \]
-    Där $s_1$ är den infallande vinkeln och $s_2$ är utfallande vinkeln. $\theta_2=\arcsin{\big(\frac{n_1}{n_2}\sin{\theta_1}\big)}$
+    Där $s_1$ är den infallande riktningen, $s_2$ är den utfallande riktningen och $s_3$ är den reflekterade riktningen. $\theta_2=\arcsin{\big(\frac{n_1}{n_2}\sin{\theta_1}\big)}$ och $\theta_3=-\theta_1$.\\
+
+    Vågen kan även behöva förflyttas i propageringsriktningen för att matcha i brytningsytan detta görs i så fall av att bestämma $\alpha$ före och efter brytningen så att vågorna matchar. Till exempel vid translation:
+    \[
+      e^{i(k_1\bar{s_1}\cdot\bar{r}+\alpha_1)}=e^{i(k_1\bar{s_2}\cdot\bar{r}+\alpha_2)}
+    \]
 
   \subsection*{B - Skriv ner sambanden för Fresnels ekvationer för p-polariserat ljus och hur de förhåller sig till riktningscosinerna och brytningsindexen.}
     Fresnels ekvationer för de p-polariserade ljuset kan beskrivas med följande ekvationer:
@@ -116,7 +139,7 @@
     \]
 
     \textbf{FALL II:}\\
-    $\theta_2\approx12.3429^{\circ}$\\
+    $\theta_2\approx33.1773^{\circ}$\\
     Riktningscosinerna:
     \[
       \bar{s_1} =
@@ -126,12 +149,12 @@
       \qquad\qquad
       \bar{s_2} =
       \begin{bmatrix}
-        0\\0.2138\\0.9769
+        0\\0.5472\\0.8370
       \end{bmatrix}
     \]
     Transmissionskoefficienten:
     \[
-      t_p = \frac{2\times1.6\times0.9397}{1.6\times0.9769+1\times0.9397}\approx1.2015
+      t_p = \frac{2\times1.6\times0.9397}{1.6\times0.8370+1\times0.9397}\approx1.3195
     \]
 
 \section*{Uppgift 3}
@@ -142,8 +165,10 @@
     \]
     \textbf{FALL II:}
     \[
-      T=|t_p|^2\frac{n_2s_{z2}}{n_1s_{z1}}=|1.2015|^2\frac{1\times0.9769}{1.6\times0.9397}\approx0.9380
+      T=|t_p|^2\frac{n_2s_{z2}}{n_1s_{z1}}=|1.3195|^2\frac{1\times0.8370}{1.6\times0.9397}\approx0.9693
     \]
+
+\newpage
 \section*{Uppgift 4}
   \subsection*{A - Beskriv vad som menas med Brewstervinkeln, $theta_B$, och den kritiska vinkeln, $\theta_C$, samt hur dessa förhåller sig till brytningsindex och infallande vinklar.}
     Brewservinkeln är den vinkeln där allt ljus som reflekteras är polariserat och vinkeln bestämms utav ekvationen: $\theta_B=\arctan{\big(\frac{n_2}{n_1}\big)}$\\

@@ -73,7 +73,7 @@
     \]
     Vid insättning av dessa i ekvation (\ref{eq:f}), skriva om $z=Re\{q_1\}$ och $z_0=Im\{q_1\}$ samt omskrivning så får vi:
     \[
-      f=\frac{q_1\big(\sqrt{1+\frac{Re\{q_1\}}{Im\{q_1\}}-M^2}-iM\big)}{\sqrt{1+\frac{Re\{q_1\}}{Im\{q_1\}}-M^2}-iM+\frac{q_1}{Im\{q_1\}M}}
+      f=\frac{q_1\big(\sqrt{1+\big(\frac{Re\{q_1\}}{Im\{q_1\}}\big)^2-M^2}-iM\big)}{\sqrt{1+\big(\frac{Re\{q_1\}}{Im\{q_1\}}\big)^2-M^2}-iM+\frac{q_1}{Im\{q_1\}M}}
     \]
 
 \newpage
@@ -101,6 +101,21 @@
   Och numeriskt där $q_1$ ger $z=100\mu m$ och $z_0=20\mu m$
   \[
     f=\frac{(100\times10^{-6})^2+(20\times10^{-6})}{100\times10^{-6}}=\mathbf{104\mu m}
+  \]
+
+\newpage
+\section*{Uppgift 4:}
+  För att beräkna vad för lins som behövs för att ljuset ska brytas ihop igen till en midja på $2W_0'=4\mu m$ då $q_1=(100+i20)\mu m$ och $\lambda=1\mu m$ så används ekvation:
+  \[
+    f=\frac{q_1\big(\sqrt{1+\big(\frac{Re\{q_1\}}{Im\{q_1\}}\big)^2-M^2}-iM\big)}{\sqrt{1+\big(\frac{Re\{q_1\}}{Im\{q_1\}}\big)^2-M^2}-iM+\frac{q_1}{Im\{q_1\}M}}
+  \]
+  $q_1$ är redan givet så det är endast förstoringen $M$ som behöver beräknas. Förstoringen är given av $M=\frac{W_0'}{W_0}$ där $W_0=\sqrt{\frac{\lambda Im\{q_1\}}{\pi}}$ vilket ger:
+  \[
+    M=W_0'\sqrt{\frac{\pi}{\lambda Im\{q_1\}}}=2\times10^{-6}\sqrt{\frac{\pi}{1\times10^{-6}\times20\times10^{-6}}}=0.7927
+  \]
+  Sedan sätts detta in i ekvationen för brännvidden $f$:
+  \[
+    f=\frac{(100+i20)\times10^{-6}\big(\sqrt{1+\big(\frac{100}{20}\big)^2-0.7927^2}-i0.7927\big)}{\sqrt{1+\big(\frac{100}{20}\big)^2-0.7927^2}-i0.7927+\frac{(100+i20)\times10^{-6}}{1\times10^{-6}\times20\times10^{-6}}}=\mathbf{45.797\mu m}
   \]
 
 \end{document}
