@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{tabto}
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                               Title                               %
@@ -491,6 +492,226 @@ Detta kallas \textit{Tunneling}
     \end{itemize}
 
     \textbf{\textit{(GÅ IGENOM EXEMPEL 3.8)}} (Kan skippa 3.6.3)
+
+\section{Kvantmekanik i tredimensioner}
+  Schrödingerekvationen (SE):
+  \[
+    i\hbar\frac{\partial \Psi}{\partial t}= \hat{H}\Psi
+  \]
+  $\hat{H}=$ Hamiltonoperatorn, motsvarar total energi
+
+  \[
+    \frac{1}{2}mv^2+V(x,y,z)=\frac{1}{2m}(p_x^2+p_y^2+p_z^2)+V(x,y,z)
+  \]
+  Rörelsemängdsoperatorer:
+  \[
+    \hat{p_x}=-i\hbar\frac{\partial}{\partial x}
+  \]
+  \[
+    \hat{p_y}=-i\hbar\frac{\partial}{\partial y}
+  \]
+  \[
+    \hat{p_z}=-i\hbar\frac{\partial}{\partial z}
+  \]
+  Använd nabla: $\bar{\nabla}=[\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z}]$ och Laplace-operatorn: $\nabla^2=\bar{\nabla}\cdot\bar{\nabla}$\\
+  Då blir SE:
+  \[
+    i\hbar\frac{\partial\Psi}{\partial t}=-\frac{\hbar^2}{2m}\nabla^2\Psi+V(x,y,z)\Psi
+  \]
+  Om $V(x,y,z)$ är oberoende av tid, t, kan tidsberoendet för $\Psi$ separeras
+  \[
+    \Psi_n(x,y,z,t)=\psi_n(x,y,z)e^{-iE_nt/\hbar}
+  \]
+  Och detta räcker för att kunna lösa den tidsberoende SE
+  \[
+    -\frac{\hbar^2}{2m}\nabla^2\psi+V\psi =E\psi
+  \]
+  Allmän lösning till tidsberoende SE
+  \[
+    \Psi(x,y,z,t)=\sum_nc_n\psi_n(x,y,z)e^{-iE_nt\hbar}
+  \]
+
+  \underline{\textbf{Koncept:}}\\
+  \[
+    \hat{H}u(x,y,z)=-\frac{\hbar^2}{2m}Csin(\frac{n_y\pi y}{a})sin(\frac{n_z\pi y}{a})\frac{\partial^2}{\partial x^2}sin(\frac{n_x\pi x}{a})=
+  \]
+  \[
+    =\frac{\hbar^2n_x^2\pi^2}{2ma^2}u(x,y,z)
+  \]
+  Vågfunktionen för en partikel i en 3D kubisk låda är en produkt av 1D "partikel-i-låd"-vågfunktioner. Egenvärdena för partikel i 3D kubisk låda är summan av egenvärdena för 1D-fallen i vardera dimension.
+
+  \subsection{Sfäriska koordinater}
+    Ofta har man sfärisk symmetri, t.ex. en väteatom med protonen i origo.\\
+
+    Elektornen rör sig i en centralpotential, $V(v)$, som bara beror på avståndet till protonen, inte riktningen på $\bar{r}$. Det är då naturligt att använda sig utav sfäriska koordinater:
+    \[
+    \begin{cases}
+      r&\text{- Radie \textit{(radiellt avstånd)}}\\
+      \theta&\text{- Polvinkel}\\
+      \phi&\text{- longitud}
+    \end{cases}
+    \]
+    Tidsberoende SE i sfäriska koordinater:
+    \[
+      -\frac{\hbar^2}{2m}\bigg[\frac{1}{r^2}\frac{\partial}{\partial r}\big(r^2\frac{\partial \psi}{\partial r}\big)+\frac{1}{r^sin\theta}\frac{\partial\psi}{\partial\theta}+\frac{1}{r^sin\theta}\frac{\partial^2\psi}{\partial\phi^2}\bigg]+V\psi=E\psi
+    \]
+    Där uttrycket inom hakparantesen är $\nabla^2\psi$ i sfäriska koordinater.\\
+
+    Separation av variabler:
+    \[
+      \psi(r,\theta,\phi)=R(r)Y(\theta,\phi)
+    \]
+    Insättning ger:
+    \[
+      -\frac{\hbar^2}{2m}\bigg[\frac{Y}{r^2}\frac{d}{dr}\big(r^2\frac{dR}{dr}\big)+\frac{R}{r^2sin\theta}\frac{\partial}{\partial\theta}\big(sin\theta\frac{\partial Y}{\partial\theta}\big)+\frac{R}{r^2sin\theta}\frac{\partial}{\partial\theta}\big(sin\theta\frac{\partial^2 Y}{\partial\phi^2}\big)\bigg]+VRY=ERY
+    \]
+    Division med YR och $-\frac{\hbar^2}{2m}$ ger:
+    \[
+      \bigg\{ \frac{1}{R}\frac{d}{dr}\big(r^2\frac{dR}{dr}\big)-\frac{2mr^2}{\hbar^2}(V(r)-E)\bigg\}+\frac{1}{Y}\bigg\{\frac{1}{sin\theta}\frac{\partial}{\partial\theta}sin\theta\frac{\partial Y}{\partial\theta}+\frac{1}{sin\theta}\frac{\partial^2 Y}{\partial\phi^2}\bigg\}=0
+    \]
+  \subsection{Den vinkelberoende ekvationen}
+    Tag den andra $\{...\}$ och multiplicera med $Ysin^2\theta$:\\
+
+     och insättning ger:
+     \[
+      \bigg\{\frac{1}{\Theta}\big[sin\theta\frac{d}{d\theta}(sin\theta\frac{d\Theta}{d\theta})\big]+l(l+1)sin^2\theta\bigg\}+ \frac{1}{\Phi}\frac{d^2\Phi}{d\phi^2}=0
+     \]
+     Som tidigare: $\frac{1}{\Phi}\frac{d^2\Phi}{d\phi^2}=\text{konstant}=-m^2$
+     \[
+      \Rightarrow \frac{d^2\Phi}{d\phi^2}=-m^2 \Rightarrow \Phi(\phi)=e^{im\phi}\quad\text{är en lösning}
+     \]
+     Roterarr ett helt varv så ska $\Phi$ ha samma värde:
+     \[
+      \Phi(\phi+2\pi)=\Phi(\phi)\Rightarrow e^{im\phi+2\pi im}=e^{im\phi}\Rightarrow e^{2\pi im}=1
+     \]
+     Vilket leder till att $m$ kan anta alla heltal både positiva och negativa samt noll för att uppfylla kriteriet.\\
+
+     Fortsätter med $\theta$-ekvationen:\\
+     \[
+      sim\theta\frac{d}{d\theta}(sin\theta\frac{d\Theta}{d\theta})+\big[l(l+1)sin^2\theta-m^2\big]\Theta=0
+     \]
+     Den har lösningar:
+     \[
+      \Theta(\theta)=AP_l^m(cos\theta),\qquad A=\text{Normaliseringskonstant}
+     \]
+     Där $P_l^m$ är associerade Legendre-funktioner. De är definerade för icke negativa heltal $l$ och för varje $l$ kan m anta $2l+1$ värden:
+     \[
+      m=-l,-l+1,...,-1,0,1,...,l-1,l
+     \]
+     $P_l^m$ är reella funktioner.\\
+
+     Normaliserade lösningar till vinkelekvationen är de så kallade klotytefunktionerna \textit{(Spherical harmonics)}.
+     \[
+      Y_l^m(\theta,\phi)=\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P_l^m(cos\theta)e^{im\phi}
+     \]
+  \subsection{Den radiella ekvationen}
+    \[
+      \frac{d}{dr}\big(r^2\frac{rR}{dr}\big)-\frac{2mr^2}{\hbar^2}(V(r)-E)R=l(l+1)R
+    \]
+    Potentiella energin, $V(r)$, påverkar hur den radiella vågfunktionen $R(r)$ ser ut. Det är bekvämt att använda funktionen: $u(r)=rR(r)$ och skriva om radiella SE:
+    \[
+      -\frac{\hbar^2}{2m}\frac{d^2u}{dr^2}+\big[V(r)+\frac{\hbar^2}{2mr^2}l(l+1)\big]u=Eu
+    \]
+    \[
+      V_{eff}(r)=V(r)+\frac{\hbar^2}{2mr^2}l(l+1)
+    \]
+    1-dimmensionell SE!\\
+
+    \underline{\textbf{Koncept:}}\\
+    Tröghetsmomentet för en partikel med massa $m$ på avståndet $r$ från origo är $I=mr^2$.\\
+    Termen $\frac{\hbar^2}{2mr^2}l(l+1)$ är rotationsdelen av den kinetiska energin om $\hbar^2l(l+1)$ är egenvärde till $\hat{L}^2$ \textit{(Rörelsemängdsmomentsoperatorn kvadrerad)}
+    \subsubsection{Kort om lösningar till radiella SE med}
+      \begin{enumerate}
+        \item $V(r)=\begin{cases}
+          0,&r\leq a\\
+          \infty,&r>a
+        \end{cases}$\\
+        Pratikel i sfäriskt hålrum
+        \item $V(r)=\frac{e^2}{4\pi\epsilon_0r}$\\
+        Väteatomen
+      \end{enumerate}
+      \hrule
+      \begin{enumerate}
+        \item Sfäriskt hålrum, exempel 4.1\\
+        Introducera "Vågvektorn" $k=\frac{\sqrt{2mE}}{\hbar}$\\
+        $k$ har dimenssion $\frac{1}{L}$, enhet $m^{-1}$\\
+        (se fri partikel med rörelsemängd $p=\hbar k$ i avsnitt 2.4)\\
+        Vågfunktionen $u(r)=0$ utanför hålrummet.\\
+        Radiella SE för $u(r)$ i hålrummet:
+        \[
+          \frac{d^2 u}{dr^2}=\bigg[\frac{l(l+1)}{r^2}-k^2\bigg]u
+        \]
+        med randvillkor $u(a)=0$ och den har lösning:
+        \[
+          u(r)=Arj_l(kr),\qquad A=\text{Normaliseringskonstant}
+        \]
+        där $j_l$ är sfäriska Besselfunktioner.\\
+
+        Vågfunktionen blir:
+        \[
+          \psi_{nlm}(r,\theta,\phi)=A_{nl}j_l(kr)Y_l^m(\theta,\phi)
+        \]
+        Egenvärdena \textit{(=energinivåerna)} kan fås fram från rötterna till $j_l(kr)$\\
+
+        $n=$ huvudkvanttal
+
+        \item Väteatomen, avsnitt 4.2\\
+        \[
+          -\frac{\hbar^2}{2m_e}\frac{d^2u}{dr^2}+\bigg[-\frac{e^2}{4\pi\epsilon_0r}+\frac{\hbar^2l(l+1)}{2m_er^2}\bigg]u=Eu
+        \]
+        $m_e=$ elektronens massa\\
+        $e=$ elementarladdningen\\
+
+        Även här kan radiella SE lösas analytiskt \textit{(se sid 144-151)}.\\
+        Man erhåller egenvärdena, Bohrs formel:
+        \[
+          E_n=-\bigg[\frac{m_e}{2\hbar^2}\bigg(\frac{e^2}{4\pi\epsilon_0}\bigg)^2\bigg]\frac{1}{n^2}=\frac{E_1}{n^2}
+        \]
+        $-E_1=13.6eV$ vilket är joniseringsenergin för en väteatom i sitt grundtillstånd.\\
+
+        Vågfunktionen blir:
+        \[
+          \psi_{nlm}(r,\theta,\phi)=\sqrt{\big(\frac{2}{na}\big)^2\frac{(n-l-1)!}{2n(n+l)!}}e^{-r/na}\big(\frac{2r}{na}\big)^l\bigg[L_{n-l-1}^{2l+1}(2r/na)\bigg]Y_l^m(\theta,\phi)
+        \]
+        $a=\text{Bohrradien}\approx0.529$Å\\
+        $L_q^p(x)=$ associerade Lagrange-polynom\\
+
+        Grundtillstånd $\psi_{100}(r,\theta,\phi)=Ae^{-r/a}$, oberoende av $\theta$ och $\phi$.\\
+
+        Normering av $\phi_{nlm}$: $\int_0^{2\pi}\int_0^{\pi}\int_0^{\infty}|\phi_nlm|^2r^2sin\theta drd\theta d\phi=1$
+
+        Om $\psi_{nlm}(r,\theta,\phi)$ är oberoende av $\theta$ och $\phi$
+        \[
+          1=\int_{0}^{\infty}|\psi_{nlm}|^2r^2dr\int_0^{2\pi}\int_0^{pi}sin\theta d\theta d\phi=4*pi\int_0^{\infty}|\psi|^2r^2dr
+        \]
+        \[
+          1=\int_0^{\infty}4\pi A^2e^{-2r/a}r^2dr\qquad\text{Sannolighetstätheten }\rho(r)
+        \]
+        $\rho(0)=0$\\
+        $\rho'(r)=4\pi A^2(2re^{-2r/a}-\frac{2}{a}e^{-2r/a}r^2)= 0$ för att finna max.\\
+        $\Rightarrow 2r=2r^2/a \Rightarrow r=a \approx 0.529$Å
+      \end{enumerate}
+      Väntevärde:
+      \[
+        <x>=\int_0^{2\pi}\int_0^{\pi}\int_0^{\infty}\psi_{100}x\psi_{100}r^2sin\theta dr d\theta d\phi
+      \]
+      \[
+        <x>=\int_0^{2\pi}\int_0^{\pi}\int_0^{\infty}\frac{1}{\pi a^3}e^{-2r/a}r^3sin^2\theta cos\phi dr d\theta d\phi
+      \]
+
+    \subsection{Väteatomens spektrum}
+      Linjespektra uppkommer vid övergångar mellan energinivåer. I kvantmekaniken är energinivåerna diskreta så det blir specifika spektrallinjer.\\
+      Ett kvantum av elektomagnetisk strålning, a.k.a en foton, med energi $h\nu$ \textit{($h$=Plancks konstant, $\nu=$ frekvensen [$Hz=s^{-1}$])} ser till att energin bevaras.\\
+      För väteatomen ges energinivåerna utav Bohrs formel.
+      \[
+        h\nu=-13.6(\frac{1}{n_i^2}-\frac{1}{n_f^2})eV
+      \]
+      $n_i$ är initiala huvudkvanttalet och $n_f$ det slutliga huvudkvanttalet.\\
+      Våglängd $\lambda=\frac{c}{\nu}$ [m] $\Rightarrow$ $\frac{1}{\lambda}=R(\frac{1}{n_i^2}-\frac{1}{n_f^2})$\\
+      Rydbergskonstant $R=\frac{m_e}{4\pi c\hbar^3}(\frac{e^2}{4\pi \epsilon_0})^2=1.097\times10^{7}m^{-1}$\\
+      Emission till:$n_f=1$ är Lyman-serien (UV)\\
+                    $n_f=2$ är Balmer-serien (synligt)\\
+                    $n_f=3$ är Paschen-serien (IR)
 
 
 \end{document}
